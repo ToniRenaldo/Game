@@ -65,7 +65,18 @@ public class AvatarController : MonoBehaviour
         HANGLEKIR,
         HANGTUAH,
         HANGJEBAT,
-        HANGLEKIU
+        HANGLEKIU,
+        NPC1_1,
+        NPC1_2,
+        NPC1_3,
+        NPC2_1,
+        NPC2_2,
+        NPC2_3,
+        RAJA,
+        ROYALTY_1,
+        ROYALTY_2,
+        BENDAHARA,
+        PANGERAN
     }
     public List<Animation> animationTypes = new List<Animation>();
     public List<AvatarList> avatarList = new List<AvatarList>();
@@ -181,6 +192,8 @@ public class AvatarController : MonoBehaviour
         animator.applyRootMotion = false;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        yield return IE_ResetPosAndRot(choosenAvatarObject.transform);
+
         CR_PlayAnimation = null;
     }
 
@@ -302,6 +315,20 @@ public class AvatarController : MonoBehaviour
         return totalDamage;
     }
 
+
+    public IEnumerator IE_ResetPosAndRot(Transform source)
+    {
+        while (transform.localPosition != Vector3.zero)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, 0.1f);
+            yield return null;
+        }
+        while (transform.localRotation != Quaternion.identity)
+        {
+            transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.identity, 0.1f);
+            yield return null;
+        }
+    }
     public IEnumerator IE_MoveToAttackPos(Transform attackPos)
     {
         while (transform.position != attackPos.position)

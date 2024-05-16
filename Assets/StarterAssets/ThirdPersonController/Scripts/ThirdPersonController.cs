@@ -106,10 +106,11 @@ namespace StarterAssets
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
 
-        private const float _threshold = 0.01f;
+        private const float _threshold = 0.001f;
 
         private bool _hasAnimator;
-
+        [Header("Rotate Clapm")]
+        public float rotateClamp;
         private bool IsCurrentDeviceMouse
         {
             get
@@ -188,17 +189,27 @@ namespace StarterAssets
                 _animator.SetBool("Grounded", Grounded);
             }
         }
-
+        bool flagRotating;
+        public Quaternion startingRotation;
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
+                if (flagRotating == false)
+                {
+                    flagRotating = true;
+                    startingRotation = CinemachineCameraTarget.transform.rotation;
+                }
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+                _cinemachineTargetYaw = startingRotation.y + (_input.look.x * deltaTimeMultiplier * rotateClamp);
+                _cinemachineTargetPitch = startingRotation.x + (_input.look.y * deltaTimeMultiplier * rotateClamp);
+            }
+            else
+            {
+                flagRotating = false;
             }
 
             // clamp our rotations so our values are limited 360 degrees

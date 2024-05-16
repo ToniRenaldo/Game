@@ -83,7 +83,7 @@ public class TurnBasedRPG : MonoBehaviour
     }
 
 
-    public void InitiateBattle(List<AvatarStats> rightTeamStats , List<AvatarStats> leftTeamStats)
+    public async void InitiateBattle(List<AvatarStats> rightTeamStats , List<AvatarStats> leftTeamStats)
     {
         // Spawing Avatar
         inventoryController = GetComponent<RPG_InventoryController>();
@@ -139,6 +139,11 @@ public class TurnBasedRPG : MonoBehaviour
         isLeftPlaying = Random.Range(0, 2) == 0;
         SetupAttackChoice();
         // Start Coroutine
+
+        if(FadeCanvasController.instance != null)
+        {
+            await FadeCanvasController.instance.FadeIn();
+        }
         StartCoroutine(IE_Gameplay());
 
     }

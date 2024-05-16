@@ -11,11 +11,13 @@ public class NpcController : MonoBehaviour
 {
     // Start is called before the first frame update
     public string npcName;
+    public bool isAggresive;
     public List<string> dialogues;
     public List<string> dialogueAfter;
 
     public UnityEvent OnDialogueDone;
     public UnityEvent OnDialogueAfterDone;
+
 
     [Header("Canvas")]
     public GameObject dialogueCanvas;
@@ -34,8 +36,9 @@ public class NpcController : MonoBehaviour
     {
         canvasButton.onClick.AddListener(NextDialgoue);
     }
-
     Coroutine CR_Dialgoue;
+
+
     public void NextDialgoue()
     {
         
@@ -59,6 +62,7 @@ public class NpcController : MonoBehaviour
                 }
                 else
                 {
+                    LocalPlayer.instance.mainAvatar.SetActive(true);
                     OnDialogueDone.Invoke();
 
                 }
@@ -94,6 +98,8 @@ public class NpcController : MonoBehaviour
         FindObjectOfType<CinemachineVirtualCamera>().Follow = cameraPosition;
 
         FindObjectOfType<UICanvasControllerInput>(true).gameObject.SetActive(false);
+        LocalPlayer.instance.mainAvatar.SetActive(false);
+
         activeDialogue = interacted ?  dialogueAfter: dialogues;  
         dialogueCounter = 0;
         dialogueName.text = npcName;
@@ -110,7 +116,14 @@ public class NpcController : MonoBehaviour
 
     public void InitateInteractButton()
     {
-        FindObjectOfType<InteractButton>().ActivateButton(ShowDialgoue);
+        if (isAggresive)
+        {
+            ShowDialgoue();
+        }
+        else
+        {
+            FindObjectOfType<InteractButton>().ActivateButton(ShowDialgoue);
+        }
     }
     public void DeactivateInteractButton()
     {
@@ -118,4 +131,8 @@ public class NpcController : MonoBehaviour
 
     }
 
+    public void DestroyInstance()
+    {
+        Destroy(gameObject);
+    }
 }
