@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcName: Bapak
+  isAggresive: 0
   dialogues:
   - 'Helloo traveler hang tuang mantul ? '
   - Benar sekali ini adalah dialog ke dua
