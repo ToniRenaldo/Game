@@ -3,7 +3,17 @@ guid: e5b0eaf49c6e0944f861f57e2be03805
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RuralStallExc
+    second: {fileID: 2100000, guid: 9059f7d657a53a24493cf979e1bda411, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RuralStallRoof
+    second: {fileID: 2100000, guid: 661b492fd52516a46a1f04093ee08e30, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: cd67a61fe42711d4eb87e261ce25aed6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CabinMat__WoodCabinDif_jpg
+    second: {fileID: 2100000, guid: d729dceb6ef1dbb40b83156746d08cee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
