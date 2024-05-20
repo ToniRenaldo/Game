@@ -95,11 +95,11 @@ public class BotController : MonoBehaviour
             TurnBasedRPG.instance.SetAction(TurnBasedRPG.ActionType.USEITEM);
 
             if (Random.Range(0, 2) == 0){
-                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.itemId == "smallHP"));
+                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.id == "smallHP"));
             }
             else
             {
-                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.itemId == "bigHP"));
+                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.id == "bigHP"));
             }
         }
 
@@ -122,11 +122,11 @@ public class BotController : MonoBehaviour
             TurnBasedRPG.instance.SetAction(TurnBasedRPG.ActionType.USEITEM);
             if (Random.Range(0, 2) == 0)
             {
-                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.itemId == "smallDmg"));
+                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.id == "smallDmg"));
             }
             else
             {
-                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.itemId == "bigDmg"));
+                TurnBasedRPG.instance.SetItem(GameData.instance.globalItem.Find(x => x.id == "bigDmg"));
             }
         }
         else if (choosenAction.action == "GUARD")

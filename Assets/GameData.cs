@@ -23,42 +23,42 @@ public class GameData : MonoBehaviour
         PEDANG
     }
     [System.Serializable]
-    public class Weapon
+    public class CommonItem
     {
-        public string weaponId;
-        public string weaponName;
+        public string id;
+        public string objectName;
+        public int price;
+    }
+
+    [System.Serializable]
+    public class Weapon : CommonItem
+    {
+
         public int damage;
         public float criticalStrike;
         public Sprite imageSprite;
 
         public WeaponType type;
         public GameObject weaponPrefab;
-        public int price;
 
     }
     [System.Serializable]
-    public class Armor
+    public class Armor : CommonItem
     {
-        public string armorId;
-        public string name;
         public int armorHealth;
         public int defendChance;
-        public int price;
         public Sprite imageSprite;
-
 
     }
 
     [System.Serializable]
-    public class Item
+    public class Item : CommonItem
     {
-        public string itemId;
-        public string name;
+
         public ItemEffect effect;
         public int value;
         public int duration;
         public Sprite imageSprite;
-        public int price;
     }
 
     public List<Weapon> globalWeapon;
@@ -78,9 +78,9 @@ public class GameData : MonoBehaviour
 
     public Weapon GetWeapon(Weapon weapon)
     {
-        if (globalWeapon.Find(x => x.weaponId == weapon.weaponId) != null)
+        if (globalWeapon.Find(x => x.id == weapon.id) != null)
         {
-            return globalWeapon.Find(x => x.weaponId == weapon.weaponId);
+            return globalWeapon.Find(x => x.id == weapon.id);
         }
         else
         {
@@ -89,9 +89,9 @@ public class GameData : MonoBehaviour
     }
     public Item GetItem(Item item)
     {
-        if (globalItem.Find(x => x.itemId == item.itemId) != null)
+        if (globalItem.Find(x => x.id == item.id) != null)
         {
-            return globalItem.Find(x => x.itemId == item.itemId);
+            return globalItem.Find(x => x.id == item.id);
         }
         else
         {
@@ -101,9 +101,9 @@ public class GameData : MonoBehaviour
     }
     public Armor GetArmor(Armor weapon)
     {
-        if (globalArmor.Find(x => x.armorId == weapon.armorId) != null)
+        if (globalArmor.Find(x => x.id == weapon.id) != null)
         {
-            return globalArmor.Find(x => x.armorId == weapon.armorId);
+            return globalArmor.Find(x => x.id == weapon.id);
         }
         else
         {

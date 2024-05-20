@@ -126,8 +126,8 @@ public class AvatarController : MonoBehaviour
         stats.currentHP = spawnedAvatar.stats.currentHP;
 
         stats.avatarName = spawnedAvatar.stats.avatarName;
-        stats.weapon1 = GameData.instance.globalWeapon.Find(x=>x.weaponId == weapon1Id.weaponId);
-        stats.weapon2 = GameData.instance.globalWeapon.Find(x => x.weaponId == weapon2Id.weaponId);
+        stats.weapon1 = GameData.instance.globalWeapon.Find(x=>x.id == weapon1Id.id);
+        stats.weapon2 = GameData.instance.globalWeapon.Find(x => x.id == weapon2Id.id);
         stats.armor = GameData.instance.GetArmor(armorName);
         if(stats.armor == null)
         {
@@ -399,8 +399,8 @@ public class AvatarController : MonoBehaviour
 
         if (GetComponent<BotController>() != null)
             return;
-        Debug.Log("Item ID + : " + item.itemId);
-        GameData.Item usedItem = stats.items.Find(x => x.itemId == item.itemId);
+        Debug.Log("Item ID + : " + item.id);
+        GameData.Item usedItem = stats.items.Find(x => x.id == item.id);
         if(usedItem == null)
         {
             Debug.Log("Nothing Erased");

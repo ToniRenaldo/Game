@@ -11,10 +11,29 @@ public class GlobalInventory : MonoBehaviour
     public int gold;
     public static GlobalInventory instance;
 
-
+    private void Start()
+    {
+       
+    }
     private void Awake()
     {
         instance = this;
+    }
+    public void AddItem(RPGItem item)
+    {
+        if(item.itemType == RPGItem.Type.Weapon)
+        {
+            weapons.Add(new GameData.Weapon() { id = item.commonItem.id });
+        }
+        else if (item.itemType == RPGItem.Type.Armor)
+        {
+            armors.Add(new GameData.Armor() { id = item.commonItem.id });
+        }
+        else if (item.itemType == RPGItem.Type.Item)
+        {
+            items.Add(new GameData.Item() { id = item.commonItem.id });
+        }
+
     }
 
 }

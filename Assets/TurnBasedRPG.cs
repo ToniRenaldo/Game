@@ -155,7 +155,7 @@ public class TurnBasedRPG : MonoBehaviour
             return;
         }
         p1.ChangeWeapon(p1.activeWeapon == p1.stats.weapon1? p1.stats.weapon2:p1.stats.weapon1) ;
-        FindObjectOfType<SwapWeaponController>().SetWeaponName(p1.activeWeapon.weaponName);
+        FindObjectOfType<SwapWeaponController>().SetWeaponName(p1.activeWeapon.objectName);
 
     }
 
@@ -236,7 +236,7 @@ public class TurnBasedRPG : MonoBehaviour
             Debug.Log(p1.avatarName + " Turns ! ");
             yield return IE_PlayNotification($"Giliran {p1.stats.avatarName}", 0.5f);
 
-            FindObjectOfType<SwapWeaponController>(true).SetWeaponName(p1.activeWeapon.weaponName);
+            FindObjectOfType<SwapWeaponController>(true).SetWeaponName(p1.activeWeapon.objectName);
 
 
 

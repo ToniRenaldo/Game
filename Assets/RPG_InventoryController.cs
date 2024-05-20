@@ -13,13 +13,13 @@ public class RPG_InventoryController : MonoBehaviour
     public List<RPGItem> items;
     public void Initate(AvatarController.Stats stats)
     {
-        var groupByID = stats.items.GroupBy(x=> x.itemId);
+        var groupByID = stats.items.GroupBy(x=> x.id);
 
         foreach(var group in groupByID)
         {
             GameObject item = Instantiate(itemPrefab , placeholder);
             Debug.Log(group.Key);
-            GameData.Item currentItem = GameData.instance.globalItem.Find(x => x.itemId == group.Key);
+            GameData.Item currentItem = GameData.instance.globalItem.Find(x => x.id == group.Key);
             item.GetComponent<RPGItem>().Initiate(stats,currentItem);
             items.Add(item.GetComponent<RPGItem>());
         }
@@ -39,6 +39,6 @@ public class RPG_InventoryController : MonoBehaviour
     }
     public void UpdateItem(GameData.Item item)
     {
-        items.Find(x => x.item.itemId == item.itemId).UpdateAmmount();   
+        items.Find(x => x.item.id == item.id).UpdateAmmount();   
     }
 }
