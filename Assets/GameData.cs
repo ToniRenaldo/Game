@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using static AvatarController;
 using static GameData;
-using static UnityEditor.Progress;
 
 public class GameData : MonoBehaviour
 {

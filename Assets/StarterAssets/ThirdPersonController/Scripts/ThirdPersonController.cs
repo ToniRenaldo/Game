@@ -205,7 +205,6 @@ namespace StarterAssets
                 }
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = 1.0f;
-                Debug.Log("Starting Rotation : " + startingRotation);
                 if(_input.look.x - 0.1f < lastX || _input.look.x + 0.1f > lastX)
                 {
                     _cinemachineTargetYaw += (_input.look.x * deltaTimeMultiplier * rotateClamp);

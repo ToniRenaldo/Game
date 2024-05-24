@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class ShopController : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class ShopController : MonoBehaviour
     public List<GameData.Weapon> weapons;
     public List<GameData.Armor> armors;
 
+    public System.DateTime lastVisit;
+    public float restockMinutes;
     [Header("UI")]
     public GameObject canvasShop;
     [SerializeField] private GameObject weaponPrefab;
@@ -20,8 +24,34 @@ public class ShopController : MonoBehaviour
     [SerializeField] private TMP_Text gold;
     [SerializeField] GameObject modalConfirm;
     public List<RPGItem> storeItems;
+
+    [Header("Icon")]
+    public Transform icon;
+    public LookAtConstraint lookAtConstraint;
+
+    private void Start()
+    {
+        ConstraintSource cameraSource = new ConstraintSource();
+        cameraSource.sourceTransform = Camera.main.transform;
+        cameraSource.weight = 1;
+
+        lookAtConstraint.AddSource(cameraSource);
+    }
     public void OpenInventory()
     {
+        if(lastVisit == null)
+        {
+            Restock();
+        }
+       
+        System.TimeSpan timespan = System.DateTime.Now - lastVisit;
+        
+        if(timespan.TotalMinutes > restockMinutes)
+        {
+            Restock();
+        }
+
+
         canvasShop.SetActive(true);
         foreach (Transform t in armorContainer)
         {
@@ -67,6 +97,20 @@ public class ShopController : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    private void Restock()
+    {
+        lastVisit = System.DateTime.Now;
+
+        items.Clear();
+        int itemAmmount = Random.Range(5, 15);
+        for(int i = 0; i < itemAmmount;i++)
+        {
+            GameData.Item item = new GameData.Item() { id = GameData.instance.globalItem[Random.Range(0, GameData.instance.globalItem.Count)].id };
+            items.Add(item);
+        }
+
+        items.Sort((x, y) => string.Compare(x.id, y.id));
+    }
     void UpdatePrice()
     {
         foreach(var item in storeItems)

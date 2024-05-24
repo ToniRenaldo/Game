@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<InventoryController>(true).OpenInventory();
     }
+    public void OpenQuests()
+    {
+        FindObjectOfType<QuestCanvasController>(true).OpenQuestPanel();
+
+    }
     #endregion
 
     #region Battle

@@ -53,11 +53,14 @@ public class NpcController : MonoBehaviour
         {
             if (dialogueCounter + 1 == activeDialogue.Count)
             {
+               
                 FindObjectOfType<CinemachineVirtualCamera>().Follow = FindObjectOfType<ThirdPersonController>().GetComponent<CameraPosition>().cameraPos;
                 FindObjectOfType<UICanvasControllerInput>(true).gameObject.SetActive(true);
                 dialogueCanvas.SetActive(false);
                 if (interacted)
                 {
+                    LocalPlayer.instance.mainAvatar.SetActive(true);
+
                     OnDialogueAfterDone.Invoke();
                 }
                 else
@@ -95,7 +98,11 @@ public class NpcController : MonoBehaviour
     }
     public void ShowDialgoue()
     {
-        FindObjectOfType<CinemachineVirtualCamera>().Follow = cameraPosition;
+        if (cameraPosition != null)
+        {
+            FindObjectOfType<CinemachineVirtualCamera>().Follow = cameraPosition;
+
+        }
 
         FindObjectOfType<UICanvasControllerInput>(true).gameObject.SetActive(false);
         LocalPlayer.instance.mainAvatar.SetActive(false);
@@ -127,7 +134,16 @@ public class NpcController : MonoBehaviour
     }
     public void DeactivateInteractButton()
     {
-        FindObjectOfType<InteractButton>().DeactivateButton();
+
+        if (isAggresive)
+        {
+        }
+        else {
+            FindObjectOfType<InteractButton>().DeactivateButton();
+
+        }
+
+
 
     }
 

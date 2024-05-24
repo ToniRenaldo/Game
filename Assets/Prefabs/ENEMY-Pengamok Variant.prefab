@@ -1,5 +1,500 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2359346628241679201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8825046151094554206}
+  - component: {fileID: 3380023731563536826}
+  m_Layer: 0
+  m_Name: Enemy (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8825046151094554206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2359346628241679201}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.84736055, z: -0, w: 0.5310181}
+  m_LocalPosition: {x: 0.742424, y: 0.8029766, z: 13.625822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5077240441246514716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3380023731563536826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2359346628241679201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b61da84224a34541bd508fe7bf2b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTypes: []
+  avatarList: []
+  playerTurnCanvas: {fileID: 0}
+  hitArmorParticle: {fileID: 0}
+  hitHealthParticle: {fileID: 0}
+  attackParticle: {fileID: 0}
+  healParticle: {fileID: 0}
+  effectParticle: {fileID: 0}
+  defendParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
+  increaseDamageParticle: {fileID: 0}
+  statPlace: {fileID: 0}
+  attackPlace: {fileID: 0}
+  hitSfx: {fileID: 0}
+  attackSfx: {fileID: 0}
+  healSfx: {fileID: 0}
+  effectSfx: {fileID: 0}
+  defendSfx: {fileID: 0}
+  deathSfx: {fileID: 0}
+  choosenAvatar: 0
+  choosenAvatarObject: {fileID: 0}
+  stats:
+    avatarName: 
+    defaultHP: 0
+    currentHP: 0
+    defaultAP: 0
+    currentAP: 0
+    armor:
+      id: 
+      objectName: 
+      price: 0
+      armorHealth: 0
+      defendChance: 0
+      imageSprite: {fileID: 0}
+    weapon1:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    weapon2:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    activeEffect: []
+    items: []
+  avatarName: 
+  isDefending: 0
+  OnTurnActive:
+    m_PersistentCalls:
+      m_Calls: []
+  activeWeapon:
+    id: 
+    objectName: 
+    price: 0
+    damage: 0
+    criticalStrike: 0
+    imageSprite: {fileID: 0}
+    type: 0
+    weaponPrefab: {fileID: 0}
+  debugState: 0
+  isPlayer: 0
+  animator: {fileID: 0}
+--- !u!1 &2992891882680736790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5077240441246514716}
+  m_Layer: 0
+  m_Name: Avatars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5077240441246514716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2992891882680736790}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5286579202738633708}
+  - {fileID: 8825046151094554206}
+  - {fileID: 4919393713003017531}
+  - {fileID: 4451814101001113490}
+  m_Father: {fileID: 3411630179525416300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4483085563511720699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4451814101001113490}
+  - component: {fileID: 8887404520414034035}
+  m_Layer: 0
+  m_Name: Enemy (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4451814101001113490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483085563511720699}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.84736055, z: -0, w: 0.5310181}
+  m_LocalPosition: {x: 0.742424, y: 0.8029766, z: 13.625822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5077240441246514716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8887404520414034035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483085563511720699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b61da84224a34541bd508fe7bf2b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTypes: []
+  avatarList: []
+  playerTurnCanvas: {fileID: 0}
+  hitArmorParticle: {fileID: 0}
+  hitHealthParticle: {fileID: 0}
+  attackParticle: {fileID: 0}
+  healParticle: {fileID: 0}
+  effectParticle: {fileID: 0}
+  defendParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
+  increaseDamageParticle: {fileID: 0}
+  statPlace: {fileID: 0}
+  attackPlace: {fileID: 0}
+  hitSfx: {fileID: 0}
+  attackSfx: {fileID: 0}
+  healSfx: {fileID: 0}
+  effectSfx: {fileID: 0}
+  defendSfx: {fileID: 0}
+  deathSfx: {fileID: 0}
+  choosenAvatar: 0
+  choosenAvatarObject: {fileID: 0}
+  stats:
+    avatarName: 
+    defaultHP: 0
+    currentHP: 0
+    defaultAP: 0
+    currentAP: 0
+    armor:
+      id: 
+      objectName: 
+      price: 0
+      armorHealth: 0
+      defendChance: 0
+      imageSprite: {fileID: 0}
+    weapon1:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    weapon2:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    activeEffect: []
+    items: []
+  avatarName: 
+  isDefending: 0
+  OnTurnActive:
+    m_PersistentCalls:
+      m_Calls: []
+  activeWeapon:
+    id: 
+    objectName: 
+    price: 0
+    damage: 0
+    criticalStrike: 0
+    imageSprite: {fileID: 0}
+    type: 0
+    weaponPrefab: {fileID: 0}
+  debugState: 0
+  isPlayer: 0
+  animator: {fileID: 0}
+--- !u!1 &6959866718474466349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5286579202738633708}
+  - component: {fileID: 7389603840666811640}
+  m_Layer: 0
+  m_Name: Enemy (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5286579202738633708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959866718474466349}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.84736055, z: -0, w: 0.5310181}
+  m_LocalPosition: {x: 0.742424, y: 0.8029766, z: 13.625822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5077240441246514716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7389603840666811640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959866718474466349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b61da84224a34541bd508fe7bf2b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTypes: []
+  avatarList: []
+  playerTurnCanvas: {fileID: 0}
+  hitArmorParticle: {fileID: 0}
+  hitHealthParticle: {fileID: 0}
+  attackParticle: {fileID: 0}
+  healParticle: {fileID: 0}
+  effectParticle: {fileID: 0}
+  defendParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
+  increaseDamageParticle: {fileID: 0}
+  statPlace: {fileID: 0}
+  attackPlace: {fileID: 0}
+  hitSfx: {fileID: 0}
+  attackSfx: {fileID: 0}
+  healSfx: {fileID: 0}
+  effectSfx: {fileID: 0}
+  defendSfx: {fileID: 0}
+  deathSfx: {fileID: 0}
+  choosenAvatar: 0
+  choosenAvatarObject: {fileID: 0}
+  stats:
+    avatarName: 
+    defaultHP: 0
+    currentHP: 0
+    defaultAP: 0
+    currentAP: 0
+    armor:
+      id: 
+      objectName: 
+      price: 0
+      armorHealth: 0
+      defendChance: 0
+      imageSprite: {fileID: 0}
+    weapon1:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    weapon2:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    activeEffect: []
+    items: []
+  avatarName: 
+  isDefending: 0
+  OnTurnActive:
+    m_PersistentCalls:
+      m_Calls: []
+  activeWeapon:
+    id: 
+    objectName: 
+    price: 0
+    damage: 0
+    criticalStrike: 0
+    imageSprite: {fileID: 0}
+    type: 0
+    weaponPrefab: {fileID: 0}
+  debugState: 0
+  isPlayer: 0
+  animator: {fileID: 0}
+--- !u!1 &7445542676747990516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4919393713003017531}
+  - component: {fileID: 8291947985435078948}
+  m_Layer: 0
+  m_Name: Enemy (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4919393713003017531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445542676747990516}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.84736055, z: -0, w: 0.5310181}
+  m_LocalPosition: {x: 0.742424, y: 0.8029766, z: 13.625822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5077240441246514716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8291947985435078948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445542676747990516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b61da84224a34541bd508fe7bf2b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationTypes: []
+  avatarList: []
+  playerTurnCanvas: {fileID: 0}
+  hitArmorParticle: {fileID: 0}
+  hitHealthParticle: {fileID: 0}
+  attackParticle: {fileID: 0}
+  healParticle: {fileID: 0}
+  effectParticle: {fileID: 0}
+  defendParticle: {fileID: 0}
+  deathParticle: {fileID: 0}
+  increaseDamageParticle: {fileID: 0}
+  statPlace: {fileID: 0}
+  attackPlace: {fileID: 0}
+  hitSfx: {fileID: 0}
+  attackSfx: {fileID: 0}
+  healSfx: {fileID: 0}
+  effectSfx: {fileID: 0}
+  defendSfx: {fileID: 0}
+  deathSfx: {fileID: 0}
+  choosenAvatar: 0
+  choosenAvatarObject: {fileID: 0}
+  stats:
+    avatarName: 
+    defaultHP: 0
+    currentHP: 0
+    defaultAP: 0
+    currentAP: 0
+    armor:
+      id: 
+      objectName: 
+      price: 0
+      armorHealth: 0
+      defendChance: 0
+      imageSprite: {fileID: 0}
+    weapon1:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    weapon2:
+      id: 
+      objectName: 
+      price: 0
+      damage: 0
+      criticalStrike: 0
+      imageSprite: {fileID: 0}
+      type: 0
+      weaponPrefab: {fileID: 0}
+    activeEffect: []
+    items: []
+  avatarName: 
+  isDefending: 0
+  OnTurnActive:
+    m_PersistentCalls:
+      m_Calls: []
+  activeWeapon:
+    id: 
+    objectName: 
+    price: 0
+    damage: 0
+    criticalStrike: 0
+    imageSprite: {fileID: 0}
+    type: 0
+    weaponPrefab: {fileID: 0}
+  debugState: 0
+  isPlayer: 0
+  animator: {fileID: 0}
 --- !u!1001 &2432735776946826680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2117749778487531337, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.01
       objectReference: {fileID: 0}
     - target: {fileID: 2117749778487531337, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -139,6 +634,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2433435828525896898, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5094834163876370744, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
       propertyPath: indexRandomEnd
       value: 7
@@ -161,10 +660,60 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2117749778487531337, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
       insertIndex: 0
       addedObject: {fileID: 8221884084320788064}
-    m_AddedComponents: []
+    - targetCorrespondingSourceObject: {fileID: 2117749778487531337, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5077240441246514716}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6418460638455270199, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2106200962884837372}
+    - targetCorrespondingSourceObject: {fileID: 6418460638455270199, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9110824471384988244}
   m_SourcePrefab: {fileID: 100100000, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
 --- !u!4 &3411630179525416300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2117749778487531337, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
   m_PrefabInstance: {fileID: 3619567705494127141}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7721907919624603922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6418460638455270199, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+  m_PrefabInstance: {fileID: 3619567705494127141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!205 &2106200962884837372
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721907919624603922}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
+--- !u!114 &9110824471384988244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721907919624603922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebbb6fddc492f24d882143dc230a2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

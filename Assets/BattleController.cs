@@ -43,13 +43,13 @@ public class BattleController : MonoBehaviour
 
         int enemyCount = random ? Random.Range(1, 5):enemyAvatars.Count ;
 
-        for(int i = 1; i<= enemyCount; i++)
+        for(int i = 0; i< enemyCount; i++)
         {
-            GameObject obj = new GameObject("Bot " + i);
+            GameObject obj = new GameObject((random ? "Bot " + (i+1) : enemyAvatars[i].stats.avatarName));
             bot.Add(obj);
             AvatarController ac = obj.AddComponent<AvatarController>();
             ac.choosenAvatar =  random ? (AvatarController.AVATAR)Random.Range(startingRandomIndex, endRandomIndex) : enemyAvatars[i].choosenAvatar;
-            ac.stats.avatarName = "Musuh " + i;
+            ac.stats.avatarName = random? "Musuh " + (i+1) : enemyAvatars[i].stats.avatarName;
             ac.stats.weapon1 = random ? GameData.instance.globalWeapon[Random.Range(0, GameData.instance.globalWeapon.Count)] : 
                 GameData.instance.GetWeapon(enemyAvatars[i].stats.weapon1);
 

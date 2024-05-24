@@ -19,6 +19,11 @@ public class GlobalInventory : MonoBehaviour
     {
         instance = this;
     }
+
+    public void AddGold(int ammount)
+    {
+        gold += ammount;
+    }
     public void AddItem(RPGItem item)
     {
         if(item.itemType == RPGItem.Type.Weapon)

@@ -26,7 +26,7 @@ public class OpenWorldEnemyController : MonoBehaviour
         }
         else
         {
-            BattleController.instance.StartBattle(false,reward,punishment,enemyAvatars , EndBattle);
+            BattleController.instance.StartBattle(false,reward,punishment,enemyAvatars: enemyAvatars , EndBattle);
         }
     }
 

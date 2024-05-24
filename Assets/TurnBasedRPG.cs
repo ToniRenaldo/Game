@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static Unity.Burst.Intrinsics.X86;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class TurnBasedRPG : MonoBehaviour
 {
