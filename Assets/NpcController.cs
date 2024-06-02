@@ -32,13 +32,22 @@ public class NpcController : MonoBehaviour
     public bool typing;
     private List<string> activeDialogue;
     public float dialogueSpeed;
+    public float defaultCamDistance;
+
     private void Start()
     {
+        if(canvasButton!=null)
         canvasButton.onClick.AddListener(NextDialgoue);
+
+        defaultCamDistance = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance ;
+
     }
     Coroutine CR_Dialgoue;
 
-
+    public void SetAggresive(bool flag)
+    {
+        isAggresive = flag; 
+    }
     public void NextDialgoue()
     {
         
@@ -62,12 +71,14 @@ public class NpcController : MonoBehaviour
                     LocalPlayer.instance.mainAvatar.SetActive(true);
 
                     OnDialogueAfterDone.Invoke();
+                    FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = defaultCamDistance;
+
                 }
                 else
                 {
                     LocalPlayer.instance.mainAvatar.SetActive(true);
                     OnDialogueDone.Invoke();
-
+                    FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = defaultCamDistance;
                 }
                 interacted = true;
                 Cursor.lockState = CursorLockMode.Locked;
@@ -96,12 +107,14 @@ public class NpcController : MonoBehaviour
         CR_Dialgoue = null;
         yield return null;
     }
+
     public void ShowDialgoue()
     {
         if (cameraPosition != null)
         {
             FindObjectOfType<CinemachineVirtualCamera>().Follow = cameraPosition;
-
+            defaultCamDistance = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance;
+            FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = 3;
         }
 
         FindObjectOfType<UICanvasControllerInput>(true).gameObject.SetActive(false);

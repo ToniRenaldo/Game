@@ -77,14 +77,20 @@ public class GameData : MonoBehaviour
 
     public Weapon GetWeapon(Weapon weapon)
     {
-        if (globalWeapon.Find(x => x.id == weapon.id) != null)
+        try
         {
-            return globalWeapon.Find(x => x.id == weapon.id);
-        }
-        else
+            if (globalWeapon.Find(x => x.id == weapon.id) != null)
+            {
+                return globalWeapon.Find(x => x.id == weapon.id);
+            }
+        }catch
         {
             return null;
+
         }
+        return null;
+
+
     }
     public Item GetItem(Item item)
     {

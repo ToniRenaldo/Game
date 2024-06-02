@@ -36,7 +36,7 @@ public class BotController : MonoBehaviour
     {
 
         chances.Add(new Chance("HEAL", 10));
-        chances.Add(new Chance("ATTACK1", 10));
+        chances.Add(new Chance("ATTACK1", 30));
         chances.Add(new Chance("DMG_INC", 10));
         chances.Add(new Chance("GUARD", 10));
 
@@ -51,7 +51,7 @@ public class BotController : MonoBehaviour
         }
         else if (type == BotType.Agresive)
         {
-            chances.Find(x => x.action == "ATTACK1").chance = 20;
+            chances.Find(x => x.action == "ATTACK1").chance = 50;
         }else if( type == BotType.Defender)
         {
             chances.Find(x => x.action == "GUARD").chance = 20;
