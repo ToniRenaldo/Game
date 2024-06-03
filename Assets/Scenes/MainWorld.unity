@@ -2436,6 +2436,10 @@ PrefabInstance:
       value: Rumah Dermaga (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1712179801201676834, guid: 94bb0b205d862d04d9d715b3c851230c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712179801201676834, guid: 94bb0b205d862d04d9d715b3c851230c, type: 3}
       propertyPath: m_FadeMode
       value: 1
       objectReference: {fileID: 0}
@@ -10975,6 +10979,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 368092933}
     m_Modifications:
+    - target: {fileID: 3799663625474857206, guid: 00fe4a2c2cc2f17439465e11a91ae681, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8302399392990389346, guid: 00fe4a2c2cc2f17439465e11a91ae681, type: 3}
       propertyPath: m_Name
       value: Rumah 1
@@ -12015,6 +12023,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 368092933}
     m_Modifications:
+    - target: {fileID: 1765656995574623055, guid: 5fc78b18b781ff544b86968f687f0e9b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8287444200001987757, guid: 5fc78b18b781ff544b86968f687f0e9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 512.3
