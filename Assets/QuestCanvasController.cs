@@ -35,6 +35,7 @@ public class QuestCanvasController : MonoBehaviour
 
             GameObject questPanel = Instantiate(questPrefab, targetPanel);
             questPanel.GetComponent<QuestItem>().SetupQuest(quest);
+     
         }
         gameObject.SetActive(true);
 

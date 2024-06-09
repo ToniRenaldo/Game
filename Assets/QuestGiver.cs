@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Events;
 
 public class QuestGiver : MonoBehaviour
 {
     // Start is called before the first frame update
     public SaveFileController.Quest quest;
-
+    
 
     [Header("Icon")]
     public Transform icon;

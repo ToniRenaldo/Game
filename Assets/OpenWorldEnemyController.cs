@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class OpenWorldEnemyController : MonoBehaviour
 {
     public bool random;
-
+    public bool countRandom;
+    public int enemyCount;
     public List<ResultCanvasController.Reward> reward;
     public List<ResultCanvasController.Reward> punishment;
 
@@ -16,13 +18,33 @@ public class OpenWorldEnemyController : MonoBehaviour
 
     public int indexRandomStart;
     public int indexRandomEnd;
+    public int level;
+    public TMP_Text levelTMP;
 
+    public List<GameObject> team;
+    private void Start()
+    {
+    }
+    private void OnEnable()
+    {
+        for (int i = 0; i < team.Count; i++)
+        {
+            team[i].gameObject.SetActive(i < enemyCount);
+        }
+        levelTMP.text = "Lv." + level;
+
+    }
     public async void InitiateBattle()
     {
         if (random)
         {
+            if (countRandom) 
+            {
+                enemyCount = Random.Range(1, 5);
+            }
+
             await FadeCanvasController.instance.FadeOut();
-            BattleController.instance.StartBattle(callback: EndBattle, startingRandomIndex:indexRandomStart,endRandomIndex:indexRandomEnd);
+            BattleController.instance.StartBattle(callback: EndBattle, startingRandomIndex:indexRandomStart,endRandomIndex:indexRandomEnd,level:level , count:enemyCount);
         }
         else
         {

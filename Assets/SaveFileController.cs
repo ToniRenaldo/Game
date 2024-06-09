@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SaveFileController : MonoBehaviour
 {
@@ -27,6 +28,14 @@ public class SaveFileController : MonoBehaviour
         public bool isDone;
         public bool mainQuest;
         public List<ResultCanvasController.Reward> rewards;
+        public List<ProgressAction> progressActions;
+        [System.Serializable]
+        public class ProgressAction
+        {
+            public int progress;
+            public UnityEvent OnProgressUpdated;
+        }
+
     }
     public List<Quest> quests;
     public static SaveFileController instance; 
@@ -79,6 +88,7 @@ public class SaveFileController : MonoBehaviour
     public void AddQuestProgress(int progress, Quest quest)
     {
         quest.progress += progress;
+        quest.progressActions.Find(x=>x.progress == quest.progress)?.OnProgressUpdated.Invoke();
         if (quest.progress == quest.target)
         {
             QuestDone(quest);
@@ -92,9 +102,9 @@ public class SaveFileController : MonoBehaviour
     public void QuestDone(Quest correspondingQuest)
     {
         SendNotification("Misi Selesai");
-        quests.Find(x=>x.questId ==correspondingQuest.questId).isDone = true;
-        
-        foreach(var reward in correspondingQuest.rewards)
+        Quest quest = quests.Find(x => x.questId == correspondingQuest.questId);
+        quest.isDone = true;
+        foreach (var reward in correspondingQuest.rewards)
         {
             if(reward.type == "Gold")
             {

@@ -16,6 +16,11 @@ public class QuestItem : MonoBehaviour
         if (quest.isDone)
         {
             quizTitle.text = "<s>";
+            transform.SetAsLastSibling();
+        }
+        else
+        {
+            transform.SetAsFirstSibling();
         }
         quizTitle.text += $"{quest.title} ({quest.progress}/{quest.target})";
         quizDescription.text = quest.description;
@@ -24,5 +29,6 @@ public class QuestItem : MonoBehaviour
         {
             quizReward.text += $"{reward.value} {reward.type}\n";
         }
+        
     }
 }

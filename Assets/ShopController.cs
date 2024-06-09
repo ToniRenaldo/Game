@@ -155,4 +155,37 @@ public class ShopController : MonoBehaviour
     {
         modalConfirm.SetActive(false);
     }
+    [Header("Debug")]
+    public GameData gameData;
+    [ContextMenu("Randomize Store")]
+    public void RandomizeStore()
+    {
+        var shops =  FindObjectsOfType<ShopController>().ToList();
+        shops.ForEach(x => x.armors.Clear());
+        shops.ForEach(x => x.weapons.Clear());
+
+        var weapons = gameData.globalWeapon;
+
+        foreach (var weapon in weapons) 
+        {
+
+            for (int i = 0; i < 2; i++)
+            {
+                shops[Random.Range(0,shops.Count)].weapons.Add(new GameData.Weapon() { id = weapon.id });
+            }
+        
+        }
+
+        var armors = gameData.globalArmor;
+        foreach (var armor in armors)
+        {
+
+            for (int i = 0; i < 2; i++)
+            {
+                shops[Random.Range(0, shops.Count)].armors.Add(new GameData.Armor() { id = armor.id });
+            }
+
+        }
+
+    }
 }

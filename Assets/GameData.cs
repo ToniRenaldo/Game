@@ -36,7 +36,7 @@ public class GameData : MonoBehaviour
         public int damage;
         public float criticalStrike;
         public Sprite imageSprite;
-
+        public int level;
         public WeaponType type;
         public GameObject weaponPrefab;
 
@@ -47,6 +47,7 @@ public class GameData : MonoBehaviour
         public int armorHealth;
         public int defendChance;
         public Sprite imageSprite;
+        public int level;
 
     }
 

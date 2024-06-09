@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 276ef9a7a992e5d41b180132d009553e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 209.55998
+      value: 327.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 276ef9a7a992e5d41b180132d009553e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 209.55998
+      value: 327.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 276ef9a7a992e5d41b180132d009553e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 209.55998
+      value: 327.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 276ef9a7a992e5d41b180132d009553e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -212,7 +212,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.03051622
+  - screenRelativeHeight: 0.023546467
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 525672993910224622}

@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.0009767226}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 53}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5930390829411495360
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2790682292474956983}
   m_HandleRect: {fileID: 2014883237486848154}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1947,7 +1947,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4028822387869930359}
-  m_LocalRotation: {x: 0.030545244, y: 0.7583756, z: -0.035631187, w: 0.65012616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
@@ -2627,10 +2627,10 @@ RectTransform:
   - {fileID: 4264509864500451162}
   m_Father: {fileID: 9099635848025283565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1755.1091, y: -80.5}
+  m_SizeDelta: {x: 702.04364, y: 80.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5035752281701449206
 CanvasRenderer:
@@ -3320,10 +3320,10 @@ RectTransform:
   - {fileID: 2736641455802954492}
   m_Father: {fileID: 9099635848025283565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 351.02182, y: -80.5}
+  m_SizeDelta: {x: 702.04364, y: 80.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7518731384683022788
 CanvasRenderer:
@@ -3651,7 +3651,7 @@ RectTransform:
   m_Father: {fileID: 8598930544693060438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4065,10 +4065,10 @@ RectTransform:
   - {fileID: 1733977024727865944}
   m_Father: {fileID: 9099635848025283565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1053.0654, y: -80.5}
+  m_SizeDelta: {x: 702.04364, y: 80.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7254053540006944197
 CanvasRenderer:
@@ -4437,7 +4437,7 @@ RectTransform:
   m_Father: {fileID: 3807919296425896475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5064,9 +5064,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851403374754316781, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5926953966221057148, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1241906206055117136, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
     m_AddedGameObjects:
@@ -5123,6 +5124,7 @@ MonoBehaviour:
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
   armors:
@@ -5132,6 +5134,7 @@ MonoBehaviour:
     armorHealth: 0
     defendChance: 0
     imageSprite: {fileID: 0}
+    level: 0
   restockMinutes: 5
   canvasShop: {fileID: 4733948411274295332}
   weaponPrefab: {fileID: 6981705603190762284, guid: d21ca3e8d52cd4045bbd511f52f448c8, type: 3}
@@ -5146,6 +5149,7 @@ MonoBehaviour:
   icon: {fileID: 1192489511724490952}
   lookAtConstraint: {fileID: 1473583788862580709}
   requestinBuyItem: {fileID: 0}
+  gameData: {fileID: 0}
 --- !u!114 &6986433176774145701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
@@ -5238,7 +5242,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 33c570b1e8ca24849ac5589a04add655, type: 3}
   m_Controller: {fileID: 9100000, guid: abef5cf122973cc4591b1de64567eb46, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0

@@ -28,20 +28,21 @@ public class BattleController : MonoBehaviour
     {
         instance = this;
     }
-    public void StartBattle(bool random = true, List<ResultCanvasController.Reward> rewards = null, List<ResultCanvasController.Reward> punishments = null, List<AvatarController> enemyAvatars = null, System.Action<bool> callback = null, int startingRandomIndex = 0, int endRandomIndex = 0)
+    public void StartBattle(bool random = true, List<ResultCanvasController.Reward> rewards = null, List<ResultCanvasController.Reward> punishments = null, List<AvatarController> enemyAvatars = null, System.Action<bool> callback = null, int startingRandomIndex = 0, int endRandomIndex = 0 , int level = 1, int count = 1)
     {
         GameObject battle = Instantiate(BattlePrefab);
         activeBattle = battle;
         battle.transform.position = new Vector3(0, 400, 0);
 
+        List<GameData.Weapon> weapons = GameData.instance.globalWeapon.FindAll(x => x.level == level);
+        List<GameData.Armor> armors = GameData.instance.globalArmor.FindAll(x => x.level == level);
 
-        
 
         battle.GetComponent<TurnBasedRPG>().setupLeftTeam.Clear();
         battle.GetComponent<TurnBasedRPG>().setupRightTeam.Clear();
 
 
-        int enemyCount = random ? Random.Range(1, 5):enemyAvatars.Count ;
+        int enemyCount = random ? count : enemyAvatars.Count ;
 
         for(int i = 0; i< enemyCount; i++)
         {
@@ -50,12 +51,12 @@ public class BattleController : MonoBehaviour
             AvatarController ac = obj.AddComponent<AvatarController>();
             ac.choosenAvatar =  random ? (AvatarController.AVATAR)Random.Range(startingRandomIndex, endRandomIndex) : enemyAvatars[i].choosenAvatar;
             ac.stats.avatarName = random? "Musuh " + (i+1) : enemyAvatars[i].stats.avatarName;
-            ac.stats.weapon1 = random ? GameData.instance.globalWeapon[Random.Range(0, GameData.instance.globalWeapon.Count)] : 
+            ac.stats.weapon1 = random ? weapons[Random.Range(0, weapons.Count)] : 
                 GameData.instance.GetWeapon(enemyAvatars[i].stats.weapon1);
 
-            ac.stats.defaultHP = random? Random.Range(20, 40) : enemyAvatars[i].stats.defaultHP;
+            ac.stats.defaultHP = random? Random.Range(5, 15) * level : enemyAvatars[i].stats.defaultHP;
             ac.stats.currentHP = ac.stats.defaultHP;
-            ac.stats.defaultAP = random? Random.Range(20, 40) : enemyAvatars[i].stats.defaultAP;
+            ac.stats.defaultAP = random? Random.Range(10, 20) * level : enemyAvatars[i].stats.defaultAP;
             ac.stats.currentAP = ac.stats.defaultAP;
 
 

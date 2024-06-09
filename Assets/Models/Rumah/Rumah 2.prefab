@@ -124,7 +124,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.027405506
+  - screenRelativeHeight: 0.017332219
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 9134395559856521463}
@@ -145,15 +145,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cd67a61fe42711d4eb87e261ce25aed6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.45
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd67a61fe42711d4eb87e261ce25aed6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.45
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd67a61fe42711d4eb87e261ce25aed6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 7.45
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd67a61fe42711d4eb87e261ce25aed6, type: 3}
       propertyPath: m_LocalPosition.x
