@@ -320,30 +320,36 @@ MonoBehaviour:
     defaultAP: 0
     currentAP: 0
     armor:
-      armorId: 
-      name: 
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: 
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: 
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: 
@@ -352,14 +358,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}

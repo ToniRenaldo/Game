@@ -375,7 +375,7 @@ public class TurnBasedRPG : MonoBehaviour
         {
             Debug.Log("Left Team Win");
 
-            foreach(var item in rewardList)
+            foreach (var item in rewardList)
             {
                 resultController.AddReward(item.type, item.value);
             }
@@ -392,8 +392,17 @@ public class TurnBasedRPG : MonoBehaviour
             resultController.ShowResult(false);
 
         }
+
+        foreach(var ava in AvatarDatas.instance.avatars)
+        {
+            ava.stats.currentHP = leftTeam.Find(x=>x.GetComponent<AvatarController>().choosenAvatar == ava.choosenAvatar).GetComponent<AvatarController>().stats.currentHP;
+            if(ava.stats.currentHP <= 10)
+            {
+                ava.stats.currentHP = 10;
+            }
+        }
     }
- 
+
     public void OpenTargetPanel()
     {
         targetCanvas.gameObject.SetActive(true);

@@ -35,7 +35,7 @@ public class InventoryController : MonoBehaviour
         {
             GameObject item = Instantiate(weaponPrefab, weaponTabContent);
             RPGItem rpgItem = item.GetComponent<RPGItem>();
-            rpgItem.InventorySetup(panel);
+            rpgItem.InventorySetup(panel,true, panel.owner);
         }
 
         foreach (var panel in GlobalInventory.instance.items)
@@ -49,7 +49,7 @@ public class InventoryController : MonoBehaviour
         {
             GameObject item = Instantiate(armorPrefab, armorContainer);
             RPGItem rpgItem = item.GetComponent<RPGItem>();
-            rpgItem.InventorySetup(panel);
+            rpgItem.InventorySetup(panel , true , panel.owner);
         }
         gold.text = GlobalInventory.instance.gold.ToString();
 

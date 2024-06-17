@@ -39,6 +39,8 @@ public class GameData : MonoBehaviour
         public int level;
         public WeaponType type;
         public GameObject weaponPrefab;
+        [Header("Inventory")]
+        public AvatarController owner;
 
     }
     [System.Serializable]
@@ -48,7 +50,8 @@ public class GameData : MonoBehaviour
         public int defendChance;
         public Sprite imageSprite;
         public int level;
-
+        [Header("Inventory")]
+        public AvatarController owner;
     }
 
     [System.Serializable]

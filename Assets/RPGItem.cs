@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,10 +30,21 @@ public class RPGItem : MonoBehaviour
     public TMP_Text itemEffect;
     public TMP_Text itemAmmount;
     public Button buyButton;
+    public Button useButton;
+    [Header("Inventory")]
+    public bool isInventory;
+    public GameData.CommonItem choosenItem;
+
+    [Header("Weapon")]
+    public AvatarController owner;
+    public Image ownerImage;
+ 
     public void Initiate(AvatarController.Stats stats, GameData.Item item)
     {
         this.stats = stats;
         this.item = item;
+
+     
 
         var groupByID = stats.items.GroupBy(x => x.id);
 
@@ -71,10 +83,32 @@ public class RPGItem : MonoBehaviour
         UpdateAmmount();
     }
 
-    public void InventorySetup(GameData.Weapon obj)
+    public void InventorySetup(GameData.Weapon obj , bool isInventory = false, AvatarController owner = null)
     {
+
         this.weapon = GameData.instance.GetWeapon(obj);
+
+        if (isInventory)
+        {
+            useButton.onClick.AddListener(() => choosenItem = this.weapon);
+            useButton.onClick.AddListener(() => AvatarSelector.instance.ChooseAvatar(AssignItem));
+        }
+
+        if(owner == null)
+        {
+            avatar.gameObject.SetActive(false);
+
+            useButton.gameObject.SetActive(isInventory);
+        }
+        else
+        {
+            avatar.sprite = AvatarGlobalData.instance.GetSprite(owner.choosenAvatar);
+            avatar.gameObject.SetActive(true);
+            useButton.gameObject.SetActive(false);
+        }
+
         
+
         itemName.text = weapon.objectName;  
         itemEffect.text = weapon.damage + "DMG";
         if(weapon.imageSprite != null)
@@ -88,7 +122,17 @@ public class RPGItem : MonoBehaviour
     public void InventorySetup(GameData.Item obj, bool store = false)
     {
         item = GameData.instance.GetItem(obj);
+
+        if (store == false)
+        {
+            useButton.onClick.AddListener(() => choosenItem = item);
+            useButton.onClick.AddListener(() => AvatarSelector.instance.ChooseAvatar(AssignItem));
+        }
+
+
         itemType = Type.Item;
+
+        useButton.gameObject.SetActive(!store);
 
 
         var groupByID = stats.items.GroupBy(x => x.id);
@@ -113,9 +157,29 @@ public class RPGItem : MonoBehaviour
 
     }
 
-    public void InventorySetup(GameData.Armor obj, bool store = false)
+    public void InventorySetup(GameData.Armor obj, bool isInventory = false, AvatarController owner = null)
     {
         this.armor = GameData.instance.GetArmor(obj);
+        Debug.Log("Setting Up Data");
+        if (isInventory)
+        {
+            Debug.Log("Button Clicked");
+            useButton.onClick.AddListener(() => choosenItem = this.armor);
+            useButton.onClick.AddListener(() => AvatarSelector.instance.ChooseAvatar(AssignItem));
+        }
+
+        if (owner == null)
+        {
+            avatar.gameObject.SetActive(false);
+            useButton.gameObject.SetActive(isInventory);
+        }
+        else
+        {
+            avatar.sprite = AvatarGlobalData.instance.GetSprite(owner.choosenAvatar);
+            avatar.gameObject.SetActive(true);
+            useButton.gameObject.SetActive(false);
+        }
+
         itemName.text = armor.objectName;
         itemEffect.text = armor.defendChance + "DEF";
         if (armor.imageSprite != null)
@@ -129,5 +193,53 @@ public class RPGItem : MonoBehaviour
 
     }
 
+    public void AssignItem(AvatarController ava)
+    {
+ 
 
+        GameData.Item item = GameData.instance.globalItem.Find(x => x.id == choosenItem.id);
+        if (item != null)
+        {
+            if(item.effect == GameData.ItemEffect.IncreaseHealth)
+            {
+                ava.stats.currentHP = Mathf.Clamp(ava.stats.currentHP + item.value, 0, ava.stats.defaultHP);
+                var removeItem = GlobalInventory.instance.items.Find(x => x.id == item.id);
+                GlobalInventory.instance.items.Remove(removeItem);
+                if(FindObjectOfType<InventoryController>() != null)
+                {
+                    FindObjectOfType<InventoryController>().OpenInventory();
+                }
+            }
+            return;
+        }
+        GameData.Armor armor = GameData.instance.globalArmor.Find(x => x.id == choosenItem.id);
+
+        if(armor != null)
+        {
+            GlobalInventory.instance.armors.Find(x => x.owner == ava).owner = null;
+            GlobalInventory.instance.armors.Find(x => x.id == armor.id && x.owner == null).owner = ava;
+            ava.stats.armor = armor;
+            if(FindObjectOfType<InventoryController>() != null)
+            {
+                FindObjectOfType<InventoryController>().OpenInventory();
+            }
+            return;
+        }
+        GameData.Weapon weapon = GameData.instance.globalWeapon.Find(x => x.id == choosenItem.id);
+
+        if (weapon != null)
+        {
+            GlobalInventory.instance.weapons.Find(x => x.owner == ava).owner = null;
+            GlobalInventory.instance.weapons.Find(x => (x.id == weapon.id) && x.owner==null).owner = ava;
+            ava.stats.weapon2 = weapon;
+            if(FindObjectOfType<InventoryController>() != null)
+            {
+                FindObjectOfType<InventoryController>().OpenInventory();
+            }
+            return;
+        }
+
+
+
+    }
 }
