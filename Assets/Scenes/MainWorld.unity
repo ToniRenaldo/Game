@@ -762,6 +762,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa3cb355656c9346962cf5adf99a88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &29356809
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.599998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9764157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2158991
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -335.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &29356810 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 29356809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &29356811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 29356809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &36191864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1259,8 @@ GameObject:
   m_Component:
   - component: {fileID: 68088947}
   - component: {fileID: 68088946}
-  m_Layer: 0
+  - component: {fileID: 68088948}
+  m_Layer: 6
   m_Name: Enemy Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1201,8 +1279,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58556808f385bf46af831109abc5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
-  intervalSpawnEnemy: 0
+  enemies:
+  - {fileID: 29356811}
+  - {fileID: 1555813634}
+  - {fileID: 1183549915}
+  - {fileID: 1671914876}
+  - {fileID: 150643820}
+  - {fileID: 1415171704}
+  - {fileID: 538425065}
+  intervalSpawnEnemy: 10
 --- !u!4 &68088947
 Transform:
   m_ObjectHideFlags: 0
@@ -1212,12 +1297,40 @@ Transform:
   m_GameObject: {fileID: 68088945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.3, y: 10, z: -17.7}
+  m_LocalPosition: {x: 79.3, y: 10.2, z: -17.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 29356810}
+  - {fileID: 1555813633}
+  - {fileID: 1183549914}
+  - {fileID: 1671914875}
+  - {fileID: 150643819}
+  - {fileID: 1415171703}
+  - {fileID: 538425064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &68088948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68088945}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 103.19, y: 1, z: 121.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &75639032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,6 +2933,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8679523821904740056, guid: 00fe4a2c2cc2f17439465e11a91ae681, type: 3}
   m_PrefabInstance: {fileID: 140834711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &150643818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.74246264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6698875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -444.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &150643819 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 150643818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &150643820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 150643818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &174173070
 GameObject:
   m_ObjectHideFlags: 0
@@ -8198,6 +8388,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538381357}
   m_CullTransparentMesh: 1
+--- !u!1001 &538425063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.80501646
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5932525
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -432.776
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &538425064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 538425063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &538425065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 538425063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &540277569
 GameObject:
   m_ObjectHideFlags: 0
@@ -18427,6 +18694,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOnAwake: 1
+--- !u!1001 &1183549913
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9764157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2158991
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -335.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &1183549914 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1183549913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1183549915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1183549913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1193429074
 GameObject:
   m_ObjectHideFlags: 0
@@ -21342,6 +21686,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387969540}
   m_CullTransparentMesh: 1
+--- !u!1001 &1415171702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9912155
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.13225651
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -375.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &1415171703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1415171702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1415171704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1415171702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1424940233
 GameObject:
   m_ObjectHideFlags: 0
@@ -23131,6 +23552,83 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2624672347900387262, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
   m_PrefabInstance: {fileID: 1547423830}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1555813632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -40.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9764157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2158991
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -335.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &1555813633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1555813632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1555813634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1555813632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1565658202
 GameObject:
   m_ObjectHideFlags: 0
@@ -24435,6 +24933,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetQuestId: cariTopi
   progress: 1
+--- !u!1001 &1671914874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 68088947}
+    m_Modifications:
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -38.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9764157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2158991
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -335.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_Name
+      value: ENEMY-Pengamok Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721907919624603922, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+--- !u!4 &1671914875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3411630179525416300, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1671914874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1671914876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398990152253578013, guid: 7333cfe2f34bf80418a6da97e92022d2, type: 3}
+  m_PrefabInstance: {fileID: 1671914874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89f8874b7e50f44bcd734a8723ca4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1686275878
 GameObject:
   m_ObjectHideFlags: 0
