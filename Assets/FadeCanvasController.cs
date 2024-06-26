@@ -38,8 +38,7 @@ public class FadeCanvasController : MonoBehaviour
         while (currentTime < fadeTime)
         {
             currentTime += Time.deltaTime;
-            Debug.Log("Current Time : " + currentTime);
-            Debug.Log("Progress: " + currentTime / fadeTime);
+
 
             canvasGroup.alpha = currentTime / fadeTime;
             await Task.Yield();

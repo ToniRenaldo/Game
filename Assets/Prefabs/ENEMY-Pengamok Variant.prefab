@@ -79,6 +79,7 @@ MonoBehaviour:
       defendChance: 0
       imageSprite: {fileID: 0}
       level: 0
+      owner: {fileID: 0}
     weapon1:
       id: 
       objectName: 
@@ -89,6 +90,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     weapon2:
       id: 
       objectName: 
@@ -99,6 +101,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: 
@@ -116,6 +119,7 @@ MonoBehaviour:
     level: 0
     type: 0
     weaponPrefab: {fileID: 0}
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -233,6 +237,7 @@ MonoBehaviour:
       defendChance: 0
       imageSprite: {fileID: 0}
       level: 0
+      owner: {fileID: 0}
     weapon1:
       id: 
       objectName: 
@@ -243,6 +248,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     weapon2:
       id: 
       objectName: 
@@ -253,6 +259,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: 
@@ -270,6 +277,7 @@ MonoBehaviour:
     level: 0
     type: 0
     weaponPrefab: {fileID: 0}
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -352,6 +360,7 @@ MonoBehaviour:
       defendChance: 0
       imageSprite: {fileID: 0}
       level: 0
+      owner: {fileID: 0}
     weapon1:
       id: 
       objectName: 
@@ -362,6 +371,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     weapon2:
       id: 
       objectName: 
@@ -372,6 +382,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: 
@@ -389,6 +400,7 @@ MonoBehaviour:
     level: 0
     type: 0
     weaponPrefab: {fileID: 0}
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -471,6 +483,7 @@ MonoBehaviour:
       defendChance: 0
       imageSprite: {fileID: 0}
       level: 0
+      owner: {fileID: 0}
     weapon1:
       id: 
       objectName: 
@@ -481,6 +494,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     weapon2:
       id: 
       objectName: 
@@ -491,6 +505,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: 
@@ -508,6 +523,7 @@ MonoBehaviour:
     level: 0
     type: 0
     weaponPrefab: {fileID: 0}
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -692,12 +708,44 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6418460638455270199, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9110824471384988244}
+    - targetCorrespondingSourceObject: {fileID: 6954556257916785498, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5139400305591674204}
   m_SourcePrefab: {fileID: 100100000, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
 --- !u!4 &3411630179525416300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2117749778487531337, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
   m_PrefabInstance: {fileID: 3619567705494127141}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5960731497767735679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6954556257916785498, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}
+  m_PrefabInstance: {fileID: 3619567705494127141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!205 &5139400305591674204
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5960731497767735679}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &7721907919624603922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6418460638455270199, guid: db6e85aaa942d1643a333f9b2ee848a5, type: 3}

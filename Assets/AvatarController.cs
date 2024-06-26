@@ -312,6 +312,11 @@ public class AvatarController : MonoBehaviour
         PlayAnimation("ATTACK1");
         Instantiate(attackParticle, transform).SetActive(true);
 
+        if(isPlayer && GameData.instance.debug)
+        {
+            return 100;
+        }
+
         return totalDamage;
     }
 

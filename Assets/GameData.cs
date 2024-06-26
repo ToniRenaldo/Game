@@ -68,6 +68,8 @@ public class GameData : MonoBehaviour
     public List<Armor> globalArmor;
     public List<Item> globalItem;
 
+    [Header("Debug")]
+    public bool debug;
     private void Awake()
     {
         if (instance != null)

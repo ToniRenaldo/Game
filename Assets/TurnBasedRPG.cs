@@ -95,7 +95,7 @@ public class TurnBasedRPG : MonoBehaviour
 
             AvatarController ava = rightTeamStats[i].avatar;
             
-            avatar.GetComponent<AvatarController>().SetAvatar(ava.choosenAvatar , rightTeamStats[i].isPlayer);
+            avatar.GetComponent<AvatarController>().SetAvatar(ava.choosenAvatar , false);
             avatar.GetComponent<AvatarController>().SetStats(ava, ava.stats.weapon1, ava.stats.weapon2, ava.stats.armor, ava.stats.items);
             rightTeam.Add(avatar);
             GameObject stats = Instantiate(playerStatsMiniPrefab , enemyStatsPanel);
@@ -116,7 +116,7 @@ public class TurnBasedRPG : MonoBehaviour
             avatar.GetComponent<AvatarController>().SetAvatar(leftTeamStats[i].avatar.choosenAvatar, leftTeamStats[i].isPlayer);
 
             AvatarController ava = leftTeamStats[i].avatar;
-            avatar.GetComponent<AvatarController>().SetAvatar(ava.choosenAvatar, leftTeamStats[i].isPlayer);
+            avatar.GetComponent<AvatarController>().SetAvatar(ava.choosenAvatar,true);
             avatar.GetComponent<AvatarController>().SetStats(ava, ava.stats.weapon1, ava.stats.weapon2, ava.stats.armor, ava.stats.items);
             leftTeam.Add(avatar);
             GameObject stats = Instantiate(playerStatsPrefab, playerStatsPanel);
@@ -271,6 +271,10 @@ public class TurnBasedRPG : MonoBehaviour
 
             if(actionType == ActionType.ATTACK1)
             {
+                if(isLeftPlaying && GameData.instance.debug)
+                {
+
+                }
                 if(p1.activeWeapon.type != GameData.WeaponType.PANAH)
                 {
                     yield return p1.IE_MoveToAttackPos(p2.attackPlace);
