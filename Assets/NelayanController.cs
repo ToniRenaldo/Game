@@ -61,6 +61,10 @@ public class NelayanController : MonoBehaviour
     public void TravelToPulau2()
     {
         GlobalInventory.instance.gold -= targetGold;
+        if(SaveFileController.instance.quests.Find(x=>x.questId == "dermaga0")?.isDone == false)
+        {
+            SaveFileController.instance.AddQuestProgress(1, SaveFileController.instance.quests.Find(x => x.questId == "dermaga0"));
+        }
         Travel(true);
     }
 
