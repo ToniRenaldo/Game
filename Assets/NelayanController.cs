@@ -1,3 +1,4 @@
+using Cinemachine;
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,9 @@ public class NelayanController : MonoBehaviour
     public GameObject pulau2;
     public Transform TravelPointPulau2;
 
+    [Header("Pulau Nikah")]
+    public GameObject pulauNikah;
+    public Transform TravelPointPulauNikah;
     private void Start()
     {
         oldDialogue.AddRange( GetComponent<NpcController>().dialogues);
@@ -57,20 +61,42 @@ public class NelayanController : MonoBehaviour
     }
 
 
+    public void TravelToPulauNikah()
+    {
+        GlobalInventory.instance.gold -= targetGold;
+        if (SaveFileController.instance.quests.Find(x => x.questId == "dermaga0")?.isDone == false)
+        {
+            SaveFileController.instance.AddQuestProgress(1, SaveFileController.instance.quests.Find(x => x.questId == "dermaga0"));
+        }
+        OnDialogueDone.RemoveAllListeners();
+        OnDialogueDone.AddListener(TravelToPulau2);
+        TransitionTravelToPulauNikah();
+    }
+
 
     public void TravelToPulau2()
     {
         GlobalInventory.instance.gold -= targetGold;
-        if(SaveFileController.instance.quests.Find(x=>x.questId == "dermaga0")?.isDone == false)
+        if(SaveFileController.instance.quests.Find(x=>x.questId == "dermaga1")?.isDone == false)
         {
-            SaveFileController.instance.AddQuestProgress(1, SaveFileController.instance.quests.Find(x => x.questId == "dermaga0"));
+            SaveFileController.instance.AddQuestProgress(1, SaveFileController.instance.quests.Find(x => x.questId == "dermaga1"));
         }
         Travel(true);
     }
 
+    public async void TransitionTravelToPulauNikah()
+    {
+        pulauNikah.gameObject.SetActive(true);
+        await FadeCanvasController.instance.FadeOut();
+        Transform tpPoint = TravelPointPulauNikah;
+        FindObjectOfType<ThirdPersonController>().transform.SetPositionAndRotation(tpPoint.position, tpPoint.rotation);
+        await Task.Delay(2000);
+        await FadeCanvasController.instance.FadeIn();
+        SaveFileController.instance.SendNotification("Anda telah tiba di Pulau Majapahit");
+    }
+
     public async void Travel(bool flagPulau2)
     {
-        
         await FadeCanvasController.instance.FadeOut();
         Transform tpPoint = flagPulau2 ? TravelPointPulau2 : TravelPointPulau1;
         pulau2.SetActive(flagPulau2);

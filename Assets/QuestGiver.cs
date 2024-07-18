@@ -13,11 +13,20 @@ public class QuestGiver : MonoBehaviour
     [Header("Icon")]
     public Transform icon;
     public LookAtConstraint lookAtConstraint;
-    private void OnEnable()
+    private void Start()
     {
         if(quest != null)
         {
-            HaveQuest();
+            var currentQuest = SaveFileController.instance.quests.Find(x => x.questId == quest.questId);
+            if (currentQuest != null && currentQuest.isDone)
+            {
+                quest = null;
+            }
+            else
+            {
+                HaveQuest();
+
+            }
         }
        
     }
@@ -41,6 +50,8 @@ public class QuestGiver : MonoBehaviour
     }
     public void SendQuest()
     {
+        if (quest == null)
+            return;
         SaveFileController.instance.AddQuest(quest);
         icon.gameObject.SetActive(false);
         lookAtConstraint.enabled = false;
