@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 7991158086866116599}
   - component: {fileID: 8535051253107996328}
   - component: {fileID: 5926953966221057148}
+  - component: {fileID: 7655763489168734385}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -222,6 +223,7 @@ MonoBehaviour:
   dialogueCounter: 0
   typing: 0
   dialogueSpeed: 0.05
+  defaultCamDistance: 0
 --- !u!114 &5926953966221057148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +245,30 @@ MonoBehaviour:
     isDone: 0
     mainQuest: 0
     rewards: []
+    progressActions: []
   icon: {fileID: 2672575941632202335}
   lookAtConstraint: {fileID: 8671887193818759650}
+--- !u!65 &7655763489168734385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069056040566277001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5542251, y: 1.948599, z: 0.4896271}
+  m_Center: {x: 0, y: 1.0207496, z: 0}
 --- !u!1 &4016496195941356993
 GameObject:
   m_ObjectHideFlags: 0

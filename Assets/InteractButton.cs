@@ -18,6 +18,6 @@ public class InteractButton : MonoBehaviour
     public void DeactivateButton()
     {
         interactButton.gameObject.SetActive(false);
-        interactButton.onClick.RemoveListener(currentCallback);
+        interactButton.onClick.RemoveAllListeners();
     }
 }

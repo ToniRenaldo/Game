@@ -28,7 +28,7 @@ public class BattleController : MonoBehaviour
     {
         instance = this;
     }
-    public void StartBattle(bool random = true, List<ResultCanvasController.Reward> rewards = null, List<ResultCanvasController.Reward> punishments = null, List<AvatarController> enemyAvatars = null, System.Action<bool> callback = null, int startingRandomIndex = 0, int endRandomIndex = 0 , int level = 1, int count = 1)
+    public void StartBattle(bool random = true, List<ResultCanvasController.Reward> rewards = null, List<ResultCanvasController.Reward> punishments = null, List<AvatarController> enemyAvatars = null, System.Action<bool> callback = null, int startingRandomIndex = 0, int endRandomIndex = 0 , int level = 1, int count = 1, List<AvatarController> playerTeam = null)
     {
         GameObject battle = Instantiate(BattlePrefab);
         activeBattle = battle;
@@ -90,7 +90,13 @@ public class BattleController : MonoBehaviour
         battle.GetComponent<TurnBasedRPG>().punishmentList.AddRange(punishmentList);
         //Setup Reward
 
-        foreach (var ava in FindObjectOfType<AvatarDatas>().avatars)
+        var avas = FindObjectOfType<AvatarDatas>().avatars;
+        if (playerTeam != null)
+        {
+            avas = playerTeam;
+        }
+
+        foreach (var ava in avas)
         {
             battle.GetComponent<TurnBasedRPG>().setupLeftTeam.Add(new AvatarStats() { avatar = ava });
         }

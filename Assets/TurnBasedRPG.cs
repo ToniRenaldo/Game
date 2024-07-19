@@ -399,6 +399,8 @@ public class TurnBasedRPG : MonoBehaviour
 
         foreach(var ava in AvatarDatas.instance.avatars)
         {
+            if (leftTeam.Find(x => x.GetComponent<AvatarController>().choosenAvatar == ava.choosenAvatar) == null)
+                continue;
             ava.stats.currentHP = leftTeam.Find(x=>x.GetComponent<AvatarController>().choosenAvatar == ava.choosenAvatar).GetComponent<AvatarController>().stats.currentHP;
             if(ava.stats.currentHP <= 10)
             {

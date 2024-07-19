@@ -142,22 +142,12 @@ public class NpcController : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<InteractButton>().ActivateButton(ShowDialgoue);
+            FindObjectOfType<InteractButton>(true).ActivateButton(ShowDialgoue);
         }
     }
     public void DeactivateInteractButton()
     {
-
-        if (isAggresive)
-        {
-        }
-        else {
-            FindObjectOfType<InteractButton>().DeactivateButton();
-
-        }
-
-
-
+        FindObjectOfType<InteractButton>(true).DeactivateButton();
     }
 
     public void DestroyInstance()

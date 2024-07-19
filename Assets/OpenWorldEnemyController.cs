@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -40,7 +41,7 @@ public class OpenWorldEnemyController : MonoBehaviour
         {
             if (countRandom) 
             {
-                enemyCount = Random.Range(1, 5);
+                enemyCount = UnityEngine.Random.Range(1, 5);
             }
 
             await FadeCanvasController.instance.FadeOut();
@@ -50,6 +51,23 @@ public class OpenWorldEnemyController : MonoBehaviour
         {
             BattleController.instance.StartBattle(false,reward,punishment,enemyAvatars: enemyAvatars , EndBattle);
         }
+    }
+
+    public async void InitiateByOneBattle(string avaName)
+    {
+        List<AvatarController> avatars = new List<AvatarController>();
+        
+        if (Enum.TryParse(avaName, out AvatarController.AVATAR avaType))
+        {
+            Debug.Log("Parsed enum: " + avaType);
+        }
+        else
+        {
+            Debug.LogError("Invalid enum string: " + avaType);
+        }
+
+        avatars.Add(FindObjectOfType<AvatarDatas>().avatars.Find(x => x.choosenAvatar == avaType));
+        BattleController.instance.StartBattle(playerTeam: avatars, callback: EndBattle, startingRandomIndex: indexRandomStart, endRandomIndex: indexRandomEnd, level: level, count: enemyCount);
     }
 
     public void EndBattle(bool win)

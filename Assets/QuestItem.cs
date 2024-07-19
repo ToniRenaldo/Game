@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestItem : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class QuestItem : MonoBehaviour
         if (quest.isDone)
         {
             quizTitle.text = "<s>";
+            GetComponent<Image>().color = Color.green;
             transform.SetAsLastSibling();
         }
         else
