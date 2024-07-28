@@ -54,5 +54,10 @@ public class InventoryController : MonoBehaviour
         gold.text = GlobalInventory.instance.gold.ToString();
 
         gameObject.SetActive(true);
+
+    }
+    public void SaveInventory()
+    {
+        SaveFileController.instance.Save();
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static AvatarController;
 
 public class RPGItem : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class RPGItem : MonoBehaviour
     [Header("UI")]
     public Image icon;
     public Image avatar;
+    public TMP_Text avatarName;
     public TMP_Text itemName;
     public TMP_Text itemEffect;
     public TMP_Text itemAmmount;
@@ -38,13 +40,12 @@ public class RPGItem : MonoBehaviour
     [Header("Weapon")]
     public AvatarController owner;
     public Image ownerImage;
- 
+    
     public void Initiate(AvatarController.Stats stats, GameData.Item item)
     {
         this.stats = stats;
         this.item = item;
 
-     
 
         var groupByID = stats.items.GroupBy(x => x.id);
 
@@ -63,6 +64,7 @@ public class RPGItem : MonoBehaviour
         itemEffect.text = effect;
         itemAmmount.text = "x" + ammount;
         icon.sprite = item.imageSprite;
+
         GetComponent<Button>().onClick.AddListener(ChooseItem);
     }
     public void UpdateAmmount()
@@ -103,6 +105,8 @@ public class RPGItem : MonoBehaviour
         else
         {
             avatar.sprite = AvatarGlobalData.instance.GetSprite(owner.choosenAvatar);
+            avatar.gameObject.GetComponentInChildren<TMP_Text>(true).text = owner.stats.avatarName;
+
             avatar.gameObject.SetActive(true);
             useButton.gameObject.SetActive(false);
         }
@@ -176,6 +180,8 @@ public class RPGItem : MonoBehaviour
         else
         {
             avatar.sprite = AvatarGlobalData.instance.GetSprite(owner.choosenAvatar);
+            Debug.Log("Owner : " + owner.stats.avatarName);
+            avatar.gameObject.GetComponentInChildren<TMP_Text>(true).text = owner.stats.avatarName;
             avatar.gameObject.SetActive(true);
             useButton.gameObject.SetActive(false);
         }
@@ -216,7 +222,8 @@ public class RPGItem : MonoBehaviour
 
         if(armor != null)
         {
-            GlobalInventory.instance.armors.Find(x => x.owner == ava).owner = null;
+            if (GlobalInventory.instance.armors.Find(x => x.owner == ava) != null)
+                GlobalInventory.instance.armors.Find(x => x.owner == ava).owner = null;
             GlobalInventory.instance.armors.Find(x => x.id == armor.id && x.owner == null).owner = ava;
             ava.stats.armor = armor;
             if(FindObjectOfType<InventoryController>() != null)
@@ -229,7 +236,8 @@ public class RPGItem : MonoBehaviour
 
         if (weapon != null)
         {
-            GlobalInventory.instance.weapons.Find(x => x.owner == ava).owner = null;
+            if(GlobalInventory.instance.weapons.Find(x => x.owner == ava) != null)
+                GlobalInventory.instance.weapons.Find(x => x.owner == ava).owner = null;
             GlobalInventory.instance.weapons.Find(x => (x.id == weapon.id) && x.owner==null).owner = ava;
             ava.stats.weapon2 = weapon;
             if(FindObjectOfType<InventoryController>() != null)

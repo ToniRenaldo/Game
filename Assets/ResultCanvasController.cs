@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,6 +20,7 @@ public class ResultCanvasController : MonoBehaviour
             this.value = value; 
         }
         public string type;
+        [JsonIgnore]
         public Sprite icon;
         public int value;
     }

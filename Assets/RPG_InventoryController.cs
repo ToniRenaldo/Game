@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RPG_InventoryController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class RPG_InventoryController : MonoBehaviour
     public GameObject itemPrefab;
     public GameData.Item currentItem;
     public List<RPGItem> items;
+    public Button useButton;
     public void Initate(AvatarController.Stats stats)
     {
         var groupByID = stats.items.GroupBy(x=> x.id);
@@ -26,6 +28,13 @@ public class RPG_InventoryController : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if(currentItem == null)
+        {
+            useButton.interactable = false;
+        }
+    }
     public void ChooseObject(GameData.Item choosenItem)
     {
         currentItem = choosenItem;

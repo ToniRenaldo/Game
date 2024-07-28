@@ -21,6 +21,7 @@ public class CharacterFollower : MonoBehaviour
         {
             if(t.gameObject.activeSelf == true)
             {
+                if(t.GetComponent<Animator>() != null)
                 animator = t.gameObject.GetComponent<Animator>();
             }
         }

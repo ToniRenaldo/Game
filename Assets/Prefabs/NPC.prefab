@@ -219,11 +219,11 @@ MonoBehaviour:
   canvasButton: {fileID: 9088595366715116808}
   avaAnimator: {fileID: 7456897396964875734}
   cameraPosition: {fileID: 8632978701233850374}
-  interacted: 0
   dialogueCounter: 0
   typing: 0
   dialogueSpeed: 0.05
-  defaultCamDistance: 0
+  defaultCamDistance: 8.2
+  huhClip: {fileID: 8300000, guid: 87c9d8db25faf0047925c5fb8e73e44f, type: 3}
 --- !u!114 &5926953966221057148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +248,7 @@ MonoBehaviour:
     progressActions: []
   icon: {fileID: 2672575941632202335}
   lookAtConstraint: {fileID: 8671887193818759650}
+  questSettedUp: 0
 --- !u!65 &7655763489168734385
 BoxCollider:
   m_ObjectHideFlags: 0

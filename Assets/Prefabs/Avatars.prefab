@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 2779341472884881173}
   - component: {fileID: 1605648400494105704}
   - component: {fileID: 8658764414327266870}
+  - component: {fileID: 2969638522927987901}
   m_Layer: 0
   m_Name: Avatars
   m_TagString: Untagged
@@ -305,12 +306,10 @@ MonoBehaviour:
   increaseDamageParticle: {fileID: 4016904430069594291}
   statPlace: {fileID: 1637031112987470518}
   attackPlace: {fileID: 1459035612338060866}
-  hitSfx: {fileID: 0}
-  attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
-  deathSfx: {fileID: 0}
+  hitSfx: {fileID: 8300000, guid: 77a11ca5024a2af4f97fad06d256b17f, type: 3}
+  attackSfx: {fileID: 8300000, guid: fa3fe26bb52b22d4a9d86d0f4086dd15, type: 3}
+  drinkSfx: {fileID: 8300000, guid: c9d813874318dcb4b98fdc76a25610b1, type: 3}
+  deathSfx: {fileID: 8300000, guid: 77a11ca5024a2af4f97fad06d256b17f, type: 3}
   choosenAvatar: 0
   choosenAvatarObject: {fileID: 0}
   stats:
@@ -327,6 +326,7 @@ MonoBehaviour:
       defendChance: 0
       imageSprite: {fileID: 0}
       level: 0
+      avatar: 0
       owner: {fileID: 0}
     weapon1:
       id: 
@@ -338,6 +338,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      avatar: 0
       owner: {fileID: 0}
     weapon2:
       id: 
@@ -349,6 +350,7 @@ MonoBehaviour:
       level: 0
       type: 0
       weaponPrefab: {fileID: 0}
+      avatar: 0
       owner: {fileID: 0}
     activeEffect: []
     items: []
@@ -367,6 +369,7 @@ MonoBehaviour:
     level: 0
     type: 0
     weaponPrefab: {fileID: 0}
+    avatar: 0
     owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
@@ -429,6 +432,102 @@ MonoBehaviour:
   - type: 3
     template: {fileID: 3745977976045205777}
   activeWeapon: {fileID: 0}
+--- !u!82 &2969638522927987901
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880419162815064442}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5844521882541639781
 GameObject:
   m_ObjectHideFlags: 0

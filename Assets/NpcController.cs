@@ -27,13 +27,14 @@ public class NpcController : MonoBehaviour
 
     public Animator avaAnimator;
     public Transform cameraPosition;
-    public bool interacted;
+    public bool interacted { get; set; }
     public int dialogueCounter = 0;
     public bool typing;
     private List<string> activeDialogue;
     public float dialogueSpeed;
     public float defaultCamDistance;
-
+    [Header("Audio Source")]
+    public AudioClip huhClip;
     private void Start()
     {
         if(canvasButton!=null)
@@ -83,6 +84,7 @@ public class NpcController : MonoBehaviour
                 interacted = true;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                DeactivateInteractButton();
                 return;
             }
             dialogueCounter++;
@@ -124,6 +126,11 @@ public class NpcController : MonoBehaviour
         dialogueCounter = 0;
         dialogueName.text = npcName;
         dialogueTMP.text = "";
+
+        if(npcName != "")
+        {
+            FindObjectOfType<AudioManager>().sfxAudioSource.PlayOneShot(huhClip);
+        }
 
         CR_Dialgoue = StartCoroutine(IE_Type());
 

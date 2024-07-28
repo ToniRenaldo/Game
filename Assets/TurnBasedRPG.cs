@@ -99,7 +99,9 @@ public class TurnBasedRPG : MonoBehaviour
             avatar.GetComponent<AvatarController>().SetStats(ava, ava.stats.weapon1, ava.stats.weapon2, ava.stats.armor, ava.stats.items);
             rightTeam.Add(avatar);
             GameObject stats = Instantiate(playerStatsMiniPrefab , enemyStatsPanel);
+
             stats.GetComponent<RPGPlayerStats>().Initiate(avatar.GetComponent<AvatarController>());
+
             playerStatsUI.Add(stats.GetComponent<RPGPlayerStats>());
             stats.GetComponent<ObjectFollower>().target3DObject = avatar.GetComponent<AvatarController>().statPlace;
 

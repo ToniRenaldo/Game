@@ -2,8 +2,10 @@ using Cinemachine;
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 public class NelayanController : MonoBehaviour
@@ -25,6 +27,8 @@ public class NelayanController : MonoBehaviour
     [Header("Pulau Nikah")]
     public GameObject pulauNikah;
     public Transform TravelPointPulauNikah;
+
+   
     private void Start()
     {
         oldDialogue.AddRange( GetComponent<NpcController>().dialogues);
@@ -61,6 +65,7 @@ public class NelayanController : MonoBehaviour
     }
 
 
+    [ContextMenu("Travel Pulau Nikah")]
     public void TravelToPulauNikah()
     {
         GlobalInventory.instance.gold -= targetGold;
@@ -86,24 +91,58 @@ public class NelayanController : MonoBehaviour
 
     public async void TransitionTravelToPulauNikah()
     {
-        pulauNikah.gameObject.SetActive(true);
-        await FadeCanvasController.instance.FadeOut();
-        Transform tpPoint = TravelPointPulauNikah;
-        FindObjectOfType<ThirdPersonController>().transform.SetPositionAndRotation(tpPoint.position, tpPoint.rotation);
-        await Task.Delay(2000);
-        await FadeCanvasController.instance.FadeIn();
+        await Teleport(TravelPointPulauNikah);
         SaveFileController.instance.SendNotification("Anda telah tiba di Pulau Majapahit");
+
     }
 
-    public async void Travel(bool flagPulau2)
+    public async Task Teleport(Transform tpPoint) 
     {
+        FindObjectOfType<InteractButton>(true).gameObject.SetActive(false);
+        FindObjectOfType<ThirdPersonController>().allowedToMove = false;
         await FadeCanvasController.instance.FadeOut();
-        Transform tpPoint = flagPulau2 ? TravelPointPulau2 : TravelPointPulau1;
-        pulau2.SetActive(flagPulau2);
-        pulau1.SetActive(!flagPulau2);
-        FindObjectOfType<ThirdPersonController>().transform.SetPositionAndRotation(tpPoint.position, tpPoint.rotation);
+
+        pulauNikah.SetActive(tpPoint == TravelPointPulauNikah);
+        pulau1.SetActive(tpPoint == TravelPointPulauNikah || tpPoint == TravelPointPulau1);
+        pulau2.SetActive(tpPoint == TravelPointPulau2);
+
+        var player = FindObjectOfType<ThirdPersonController>();
+        player.transform.SetPositionAndRotation(tpPoint.position, tpPoint.rotation);
+        FindObjectsOfType<CharacterFollower>().ToList().ForEach(x=>x.GetComponent<NavMeshAgent>().enabled = false); 
+        FindObjectsOfType<CharacterFollower>().ToList().ForEach(x => x.transform.SetPositionAndRotation(player.transform.position, player.transform.rotation));
+        FindObjectsOfType<CharacterFollower>().ToList().ForEach(x => x.GetComponent<NavMeshAgent>().enabled = true);
+
         await Task.Delay(2000);
         await FadeCanvasController.instance.FadeIn();
+        FindObjectOfType<InteractButton>(true).gameObject.SetActive(true);
+        FindObjectOfType<ThirdPersonController>().allowedToMove = true;
+        SaveFileController.instance.Save();
+    }
+
+    public async Task TeleportImmidiate(Transform tpPoint)
+    {
+        FindObjectOfType<InteractButton>(true).gameObject.SetActive(false);
+        FindObjectOfType<ThirdPersonController>().allowedToMove = false;
+        await FadeCanvasController.instance.FadeOut();
+
+
+
+        var player = FindObjectOfType<ThirdPersonController>();
+        player.transform.SetPositionAndRotation(tpPoint.position, tpPoint.rotation);
+        FindObjectsOfType<CharacterFollower>().ToList().ForEach(x => x.GetComponent<NavMeshAgent>().enabled = false);
+        FindObjectsOfType<CharacterFollower>().ToList().ForEach(x => x.transform.SetPositionAndRotation(player.transform.position, player.transform.rotation));
+        FindObjectsOfType<CharacterFollower>().ToList().ForEach(x => x.GetComponent<NavMeshAgent>().enabled = true);
+
+        await Task.Delay(2000);
+        await FadeCanvasController.instance.FadeIn();
+        FindObjectOfType<InteractButton>(true).gameObject.SetActive(true);
+        FindObjectOfType<ThirdPersonController>().allowedToMove = true;
+    }
+    public async void Travel(bool flagPulau2)
+    {
+        FindObjectOfType<InteractButton>().gameObject.SetActive(false);
+        Transform tpPoint = flagPulau2 ? TravelPointPulau2 : TravelPointPulau1;
+        await Teleport(tpPoint);
         SaveFileController.instance.SendNotification("Anda telah tiba area baru");
     }
 

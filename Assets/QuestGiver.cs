@@ -13,14 +13,15 @@ public class QuestGiver : MonoBehaviour
     [Header("Icon")]
     public Transform icon;
     public LookAtConstraint lookAtConstraint;
+    public bool questSettedUp;
     private void Start()
     {
         if(quest != null)
         {
             var currentQuest = SaveFileController.instance.quests.Find(x => x.questId == quest.questId);
-            if (currentQuest != null && currentQuest.isDone)
+            if (currentQuest != null )
             {
-                quest = null;
+                
             }
             else
             {
@@ -28,7 +29,39 @@ public class QuestGiver : MonoBehaviour
 
             }
         }
-       
+        questSettedUp = true;
+    }
+
+    public void SetupQuest()
+    {
+        var currentQuest = SaveFileController.instance.quests.Find(x => x.questId == quest.questId);
+        currentQuest.progressActions = quest.progressActions;
+
+        if (currentQuest.isDone)
+        {
+            for (int i = 0; i <= currentQuest.progress; i++)
+            {
+                currentQuest.progressActions.Find(x => x.progress == i)?.OnProgressUpdated.Invoke();
+
+            }
+            if (GetComponent<NpcController>() != null)
+            {
+                GetComponent<NpcController>().interacted = true;
+            }
+            quest = null;
+        }
+        else
+        {
+            if (GetComponent<NpcController>() != null)
+            {
+                GetComponent<NpcController>().OnDialogueDone.Invoke();
+                for (int i = 0; i <= currentQuest.progress; i++)
+                {
+                    currentQuest.progressActions.Find(x => x.progress == i)?.OnProgressUpdated.Invoke();
+                }
+                GetComponent<NpcController>().interacted = true;
+            }
+        }
     }
     public void HaveQuest()
     {
@@ -50,9 +83,16 @@ public class QuestGiver : MonoBehaviour
     }
     public void SendQuest()
     {
+        
         if (quest == null)
             return;
+        if (SaveFileController.instance.quests.Find(x => x.questId == quest.questId) !=null)
+        {
+            return;
+        }
         SaveFileController.instance.AddQuest(quest);
+        SaveFileController.instance.AddQuestProgress(0, SaveFileController.instance.quests.Find(x => x.questId == quest.questId));
+
         icon.gameObject.SetActive(false);
         lookAtConstraint.enabled = false;
 

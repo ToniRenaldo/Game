@@ -39,14 +39,14 @@ public class ShopController : MonoBehaviour
     }
     public void OpenInventory()
     {
-        if(lastVisit == null)
+        if (lastVisit == null)
         {
             Restock();
         }
-       
+
         System.TimeSpan timespan = System.DateTime.Now - lastVisit;
-        
-        if(timespan.TotalMinutes > restockMinutes)
+
+        if (timespan.TotalMinutes > restockMinutes)
         {
             Restock();
         }
@@ -79,7 +79,7 @@ public class ShopController : MonoBehaviour
         {
             GameObject item = Instantiate(itemPrefab, itemTabContent);
             RPGItem rpgItem = item.GetComponent<RPGItem>();
-            rpgItem.InventorySetup(panel,true);
+            rpgItem.InventorySetup(panel, true);
             rpgItem.buyButton.onClick.AddListener(() => RequestBuy(panel.id, rpgItem));
             storeItems.Add(rpgItem);
 
@@ -103,7 +103,7 @@ public class ShopController : MonoBehaviour
 
         items.Clear();
         int itemAmmount = Random.Range(5, 15);
-        for(int i = 0; i < itemAmmount;i++)
+        for (int i = 0; i < itemAmmount; i++)
         {
             GameData.Item item = new GameData.Item() { id = GameData.instance.globalItem[Random.Range(0, GameData.instance.globalItem.Count)].id };
             items.Add(item);
@@ -113,9 +113,9 @@ public class ShopController : MonoBehaviour
     }
     void UpdatePrice()
     {
-        foreach(var item in storeItems)
+        foreach (var item in storeItems)
         {
-            if(item.commonItem.price > GlobalInventory.instance.gold)
+            if (item.commonItem.price > GlobalInventory.instance.gold)
             {
                 item.buyButton.interactable = false;
             }
@@ -123,7 +123,7 @@ public class ShopController : MonoBehaviour
     }
 
     public RPGItem requestinBuyItem;
-    public void RequestBuy(string id , RPGItem item)
+    public void RequestBuy(string id, RPGItem item)
     {
         modalConfirm.gameObject.SetActive(true);
         requestinBuyItem = item;
@@ -160,20 +160,20 @@ public class ShopController : MonoBehaviour
     [ContextMenu("Randomize Store")]
     public void RandomizeStore()
     {
-        var shops =  FindObjectsOfType<ShopController>().ToList();
+        var shops = FindObjectsOfType<ShopController>().ToList();
         shops.ForEach(x => x.armors.Clear());
         shops.ForEach(x => x.weapons.Clear());
 
         var weapons = gameData.globalWeapon;
 
-        foreach (var weapon in weapons) 
+        foreach (var weapon in weapons)
         {
 
             for (int i = 0; i < 2; i++)
             {
-                shops[Random.Range(0,shops.Count)].weapons.Add(new GameData.Weapon() { id = weapon.id });
+                shops[Random.Range(0, shops.Count)].weapons.Add(new GameData.Weapon() { id = weapon.id });
             }
-        
+
         }
 
         var armors = gameData.globalArmor;
@@ -187,5 +187,10 @@ public class ShopController : MonoBehaviour
 
         }
 
+    }
+
+    public void SaveInventory()
+    {
+        SaveFileController.instance.Save();
     }
 }

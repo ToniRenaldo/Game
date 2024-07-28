@@ -23,6 +23,8 @@ public class OpenWorldEnemyController : MonoBehaviour
     public TMP_Text levelTMP;
 
     public List<GameObject> team;
+    [Header("Debug vs HangJebat")]
+    public bool versusHangJebat;
     private void Start()
     {
     }
@@ -55,6 +57,11 @@ public class OpenWorldEnemyController : MonoBehaviour
 
     public async void InitiateByOneBattle(string avaName)
     {
+        if(GetComponent<QuestGiver> () != null)
+        {
+            if (GetComponent<QuestGiver>().questSettedUp == false)
+                return;
+        }
         List<AvatarController> avatars = new List<AvatarController>();
         
         if (Enum.TryParse(avaName, out AvatarController.AVATAR avaType))
@@ -67,6 +74,11 @@ public class OpenWorldEnemyController : MonoBehaviour
         }
 
         avatars.Add(FindObjectOfType<AvatarDatas>().avatars.Find(x => x.choosenAvatar == avaType));
+        if (versusHangJebat)
+        {
+            BattleController.instance.StartBattle(random : false,playerTeam: avatars, callback: EndBattle, startingRandomIndex: indexRandomStart, endRandomIndex: indexRandomEnd, level: level, enemyAvatars: enemyAvatars);
+            return;
+        }
         BattleController.instance.StartBattle(playerTeam: avatars, callback: EndBattle, startingRandomIndex: indexRandomStart, endRandomIndex: indexRandomEnd, level: level, count: enemyCount);
     }
 

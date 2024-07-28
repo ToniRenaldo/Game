@@ -109,6 +109,7 @@ namespace StarterAssets
         private const float _threshold = 0.001f;
 
         private bool _hasAnimator;
+        public bool allowedToMove = true;
         [Header("Rotate Clapm")]
         public float rotateClamp;
         private bool IsCurrentDeviceMouse
@@ -156,6 +157,8 @@ namespace StarterAssets
         private void Update()
         {
 
+            if (!allowedToMove)
+                return;
             JumpAndGravity();
             GroundedCheck();
             Move();

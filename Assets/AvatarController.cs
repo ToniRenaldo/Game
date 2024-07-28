@@ -76,7 +76,8 @@ public class AvatarController : MonoBehaviour
         ROYALTY_1,
         ROYALTY_2,
         BENDAHARA,
-        PANGERAN
+        PANGERAN,
+        None
     }
     public List<Animation> animationTypes = new List<Animation>();
     public List<AvatarList> avatarList = new List<AvatarList>();
@@ -98,9 +99,7 @@ public class AvatarController : MonoBehaviour
     [Header("SFX")]
     public AudioClip hitSfx;
     public AudioClip attackSfx;
-    public AudioClip healSfx;
-    public AudioClip effectSfx;
-    public AudioClip defendSfx;
+    public AudioClip drinkSfx;
     public AudioClip deathSfx;
     [Header("Data")]
     public AVATAR choosenAvatar;
@@ -272,6 +271,7 @@ public class AvatarController : MonoBehaviour
             Instantiate(hitHealthParticle, transform).SetActive(true);
             PlayAnimation("HIT");
 
+
         }
         else if(stats.currentAP -damage > 0) 
         {
@@ -282,13 +282,16 @@ public class AvatarController : MonoBehaviour
                 // Armor Break
             }
             PlayAnimation("HIT");
+
         }
+        GetComponent<AudioSource>().PlayOneShot(hitSfx);
 
         if (stats.currentHP <= 0)
         {
             // Death
             animator.applyRootMotion = true;
             PlayAnimation("DEAD");
+
             increaseDamageParticle.gameObject.SetActive(false);
             return gameObject;
         }
@@ -312,10 +315,7 @@ public class AvatarController : MonoBehaviour
         PlayAnimation("ATTACK1");
         Instantiate(attackParticle, transform).SetActive(true);
 
-        if(isPlayer && GameData.instance.debug)
-        {
-            return 100;
-        }
+        GetComponent<AudioSource>().PlayOneShot(attackSfx);
 
         return totalDamage;
     }
@@ -390,6 +390,8 @@ public class AvatarController : MonoBehaviour
     public void UseItem(GameData.Item item)
     {
         PlayAnimation("USEITEM");
+        GetComponent<AudioSource>().PlayOneShot(drinkSfx);
+
         if (item.effect == GameData.ItemEffect.IncreaseHealth)
         {
             stats.currentHP += item.value;

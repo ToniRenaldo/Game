@@ -17,6 +17,7 @@ public class BattleController : MonoBehaviour
     public System.Action<bool> CurrentCallback;
     [Header("Icon")]
     [SerializeField] private Sprite goldIcon;
+    AudioClip previousAudioClip;
     [ContextMenu("Test Start Battle")]
     public void TestBattle()
     {
@@ -78,8 +79,10 @@ public class BattleController : MonoBehaviour
         }
         else
         {
-            rewardList.AddRange(rewards);
-            punishmentList.AddRange(punishmentList);
+            if(rewards != null)
+                rewardList.AddRange(rewards);
+            if(punishments != null)
+                punishmentList.AddRange(punishments);
         }
         
 
@@ -98,7 +101,10 @@ public class BattleController : MonoBehaviour
 
         foreach (var ava in avas)
         {
-            battle.GetComponent<TurnBasedRPG>().setupLeftTeam.Add(new AvatarStats() { avatar = ava });
+            AvatarStats newStat = new AvatarStats() { avatar = ava };
+            newStat.avatar.stats.items = GlobalInventory.instance.items;
+            battle.GetComponent<TurnBasedRPG>().setupLeftTeam.Add(newStat);
+            
         }
 
         //Fade Here
@@ -107,6 +113,8 @@ public class BattleController : MonoBehaviour
         mainCamera.gameObject.SetActive(false);
         CurrentCallback = callback;
         battle.GetComponent<TurnBasedRPG>().StartBattle();
+        previousAudioClip = FindObjectOfType<AudioManager>().bgmAudioSource.clip;
+        FindObjectOfType<AudioManager>().SetBattleBGM();
     }
 
     public async void CloseBattle(bool win)
@@ -131,6 +139,9 @@ public class BattleController : MonoBehaviour
 
         Destroy(activeBattle);
         await FadeCanvasController.instance.FadeIn();
-
+        if(previousAudioClip == FindObjectOfType<AudioManager>().roamingClip)
+        {
+            FindObjectOfType<AudioManager>().SetRoamingBGM();
+        }
     }
 }

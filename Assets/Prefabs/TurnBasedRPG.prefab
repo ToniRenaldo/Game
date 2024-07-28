@@ -139,9 +139,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 3
   choosenAvatarObject: {fileID: 0}
@@ -152,30 +150,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 8
@@ -184,14 +191,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -749,7 +759,7 @@ MonoBehaviour:
   m_text: Secondary Weapon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7166460313560618534, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1157,9 +1167,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 1
   choosenAvatarObject: {fileID: 0}
@@ -1170,30 +1178,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: pedang0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: tombak0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 2
@@ -1202,14 +1219,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -1393,7 +1413,7 @@ MonoBehaviour:
   m_text: x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7166460313560618534, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3039,9 +3059,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 0
   choosenAvatarObject: {fileID: 0}
@@ -3052,30 +3070,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 5
@@ -3084,14 +3111,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -3337,9 +3367,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 2
   choosenAvatarObject: {fileID: 0}
@@ -3350,30 +3378,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 7
@@ -3382,14 +3419,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -3817,13 +3857,13 @@ MonoBehaviour:
   actionType: 0
   actionTarget: {fileID: 0}
   choosenItem:
-    itemId: 
-    name: 
+    id: 
+    objectName: 
+    price: 0
     effect: 0
     value: 0
     duration: 0
     imageSprite: {fileID: 0}
-    price: 0
   inventoryController: {fileID: 0}
   attackCanvas: {fileID: 6254925981159556948}
   targetCanvas: {fileID: 7393768469601169996}
@@ -3864,74 +3904,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalWeapon:
-  - weaponId: keris0
-    weaponName: Keris
+  - id: 
+    objectName: 
+    price: 0
     damage: 10
     criticalStrike: 20
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 919132149155446097, guid: 1a9be62f13859614c9143d89497e792a, type: 3}
+    avatar: 0
+    owner: {fileID: 0}
+  - id: 
+    objectName: 
     price: 0
-  - weaponId: pedang0
-    weaponName: Pedang
     damage: 10
     criticalStrike: 20
     imageSprite: {fileID: 0}
+    level: 0
     type: 3
     weaponPrefab: {fileID: 919132149155446097, guid: d467035cbd15f8b4aa85d76383404c7e, type: 3}
+    avatar: 0
+    owner: {fileID: 0}
+  - id: 
+    objectName: 
     price: 0
-  - weaponId: tombak0
-    weaponName: Tombak
     damage: 10
     criticalStrike: 20
     imageSprite: {fileID: 0}
+    level: 0
     type: 1
     weaponPrefab: {fileID: 919132149155446097, guid: f7658c7d0836d38419215baa7483b179, type: 3}
+    avatar: 0
+    owner: {fileID: 0}
+  - id: 
+    objectName: 
     price: 0
-  - weaponId: panah0
-    weaponName: Panah
     damage: 10
     criticalStrike: 20
     imageSprite: {fileID: 0}
+    level: 0
     type: 2
     weaponPrefab: {fileID: 919132149155446097, guid: 165dc8c8d1eb1cf438f33b8798839a88, type: 3}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   globalArmor:
-  - armorId: 
-    name: Armor Normal
+  - id: 
+    objectName: 
+    price: 0
     armorHealth: 30
     defendChance: 30
-    price: 0
     imageSprite: {fileID: 0}
+    level: 0
+    avatar: 0
+    owner: {fileID: 0}
   globalItem:
-  - itemId: smallHP
-    name: Small Potion
+  - id: 
+    objectName: 
+    price: 0
     effect: 0
     value: 10
     duration: 1
     imageSprite: {fileID: 21300000, guid: 6270d46c6c1104b448fb5bac5bede74d, type: 3}
+  - id: 
+    objectName: 
     price: 0
-  - itemId: bigHP
-    name: Big Potion
     effect: 0
     value: 20
     duration: 1
     imageSprite: {fileID: 21300000, guid: 0edcb30428af9c34b9114c75ee984bf2, type: 3}
+  - id: 
+    objectName: 
     price: 0
-  - itemId: smallDmg
-    name: Small Damage Multiplier
     effect: 1
     value: 10
     duration: 2
     imageSprite: {fileID: 21300000, guid: 098c04e31cd452146be0441cc6f3ae86, type: 3}
+  - id: 
+    objectName: 
     price: 0
-  - itemId: bigDmg
-    name: Big Damage Multiplier
     effect: 1
     value: 20
     duration: 1
     imageSprite: {fileID: 21300000, guid: 10876d86c0d0c7948ab7c3f219be6325, type: 3}
-    price: 0
+  debug: 0
 --- !u!114 &906582810134760886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3962,14 +4018,15 @@ MonoBehaviour:
   placeholder: {fileID: 4053948881826961456}
   itemPrefab: {fileID: 2049481164879738255, guid: c44d0b2e8aad8b04f9e9ccfddb77a0ab, type: 3}
   currentItem:
-    itemId: 
-    name: 
+    id: 
+    objectName: 
+    price: 0
     effect: 0
     value: 0
     duration: 0
     imageSprite: {fileID: 0}
-    price: 0
   items: []
+  useButton: {fileID: 0}
 --- !u!114 &2964228771974186419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5065,9 +5122,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 0
   choosenAvatarObject: {fileID: 0}
@@ -5078,30 +5133,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: tombak0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: panah0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 3
@@ -5110,14 +5174,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -6400,9 +6467,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 2
   choosenAvatarObject: {fileID: 0}
@@ -6413,88 +6478,100 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: pedang0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items:
-    - itemId: smallHP
-      name: 
+    - id: 
+      objectName: 
+      price: 0
       effect: 0
       value: 0
       duration: 0
       imageSprite: {fileID: 0}
+    - id: 
+      objectName: 
       price: 0
-    - itemId: smallHP
-      name: 
       effect: 0
       value: 0
       duration: 0
       imageSprite: {fileID: 0}
+    - id: 
+      objectName: 
       price: 0
-    - itemId: smallHP
-      name: 
       effect: 0
       value: 0
       duration: 0
       imageSprite: {fileID: 0}
+    - id: 
+      objectName: 
       price: 0
-    - itemId: bigHP
-      name: 
       effect: 0
       value: 0
       duration: 0
       imageSprite: {fileID: 0}
+    - id: 
+      objectName: 
       price: 0
-    - itemId: smallDmg
-      name: 
       effect: 0
       value: 0
       duration: 0
       imageSprite: {fileID: 0}
+    - id: 
+      objectName: 
       price: 0
-    - itemId: smallDmg
-      name: 
       effect: 0
       value: 0
       duration: 0
       imageSprite: {fileID: 0}
-      price: 0
   avatarName: Hang Lekir -1
   isDefending: 0
   OnTurnActive:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -6888,9 +6965,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 1
   choosenAvatarObject: {fileID: 0}
@@ -6901,30 +6976,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 6
@@ -6933,14 +7017,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}
@@ -6977,7 +7064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8822998641296308244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7168,7 +7255,7 @@ MonoBehaviour:
   m_text: Attack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7166460313560618534, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7612,7 +7699,7 @@ MonoBehaviour:
   m_text: Primary Weapon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7166460313560618534, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7911,7 +7998,7 @@ MonoBehaviour:
   m_text: X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 7166460313560618534, guid: 7912277a4e962044c82deb9a461d68aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7935,7 +8022,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.3
+  m_fontSize: 18
   m_fontSizeBase: 47.8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8628,9 +8715,7 @@ MonoBehaviour:
   attackPlace: {fileID: 0}
   hitSfx: {fileID: 0}
   attackSfx: {fileID: 0}
-  healSfx: {fileID: 0}
-  effectSfx: {fileID: 0}
-  defendSfx: {fileID: 0}
+  drinkSfx: {fileID: 0}
   deathSfx: {fileID: 0}
   choosenAvatar: 3
   choosenAvatarObject: {fileID: 0}
@@ -8641,30 +8726,39 @@ MonoBehaviour:
     defaultAP: 30
     currentAP: 30
     armor:
-      armorId: 
-      name: Armor Normal
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
-      price: 0
       imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: panah0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: keris0
-      weaponName: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
       imageSprite: {fileID: 0}
+      level: 0
       type: 0
       weaponPrefab: {fileID: 0}
-      price: 0
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   avatarName: Hang Lekir 4
@@ -8673,14 +8767,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   activeWeapon:
-    weaponId: 
-    weaponName: 
+    id: 
+    objectName: 
+    price: 0
     damage: 0
     criticalStrike: 0
     imageSprite: {fileID: 0}
+    level: 0
     type: 0
     weaponPrefab: {fileID: 0}
-    price: 0
+    avatar: 0
+    owner: {fileID: 0}
   debugState: 0
   isPlayer: 0
   animator: {fileID: 0}

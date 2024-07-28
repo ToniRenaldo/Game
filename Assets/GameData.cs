@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,11 +36,17 @@ public class GameData : MonoBehaviour
 
         public int damage;
         public float criticalStrike;
+
+        [JsonIgnore]
         public Sprite imageSprite;
+
         public int level;
         public WeaponType type;
+        [JsonIgnore]
         public GameObject weaponPrefab;
         [Header("Inventory")]
+        public AvatarController.AVATAR avatar;
+        [JsonIgnore]
         public AvatarController owner;
 
     }
@@ -48,9 +55,12 @@ public class GameData : MonoBehaviour
     {
         public int armorHealth;
         public int defendChance;
+        [JsonIgnore]
         public Sprite imageSprite;
         public int level;
         [Header("Inventory")]
+        public AvatarController.AVATAR avatar;
+        [JsonIgnore]
         public AvatarController owner;
     }
 
@@ -61,6 +71,7 @@ public class GameData : MonoBehaviour
         public ItemEffect effect;
         public int value;
         public int duration;
+        [JsonIgnore]
         public Sprite imageSprite;
     }
 
@@ -79,6 +90,9 @@ public class GameData : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        
+
     }
 
     public Weapon GetWeapon(Weapon weapon)

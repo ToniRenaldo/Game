@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class RPGPlayerStats : MonoBehaviour
     public Image hpFill;
     public Image profilePicture;
     public Sprite choosenSprite;
-
+    public TMP_Text avatarName;
     public void Initiate(AvatarController ac)
     {
         currentAc = ac;
@@ -27,7 +28,9 @@ public class RPGPlayerStats : MonoBehaviour
             choosenSprite = ac.avatarList.Find(x => x.type == ac.choosenAvatar).avatarSprite;
 
             profilePicture.sprite = choosenSprite;
+      
         }
+        avatarName.text = currentStat.avatarName;
     }
 
     public void UpdateStats()

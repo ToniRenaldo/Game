@@ -6,14 +6,14 @@ using UnityEngine;
 public class FadeCanvasController : MonoBehaviour
 {
     public static FadeCanvasController instance;
-    CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
+
     public float fadeTime;
 
 
     private void Awake()
     {
         instance = this;
-        canvasGroup = GetComponent<CanvasGroup>();  
     }
     Coroutine CR_Fade;
 
