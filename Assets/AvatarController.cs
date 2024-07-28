@@ -312,6 +312,10 @@ public class AvatarController : MonoBehaviour
         }
         totalDamage = GiveDamageEffect(totalDamage);
 
+        if (isPlayer && GameData.instance.debug)
+        {
+            return 100;
+        }
         PlayAnimation("ATTACK1");
         Instantiate(attackParticle, transform).SetActive(true);
 
