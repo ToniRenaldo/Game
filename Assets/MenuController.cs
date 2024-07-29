@@ -19,7 +19,7 @@ public class MenuController : MonoBehaviour
 
         if (PlayerPrefs.HasKey("PlayerPosition"))
         {
-            ContinueButton.gameObject.SetActive(true);
+            ContinueButton.interactable = true;
         }
     }
     public void StartGame()
@@ -49,5 +49,10 @@ public class MenuController : MonoBehaviour
     {
         await FadeCanvasController.instance.FadeOut();
         SceneManager.LoadScene(1);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

@@ -119,9 +119,9 @@ public class SaveFileController : MonoBehaviour
 
             player.transform.position = pos;
 
-            var distancePulau1 = Vector3.Distance(player.transform.position, FindObjectOfType<NelayanController>().TravelPointPulau1.position);
-            var distancePulau2 = Vector3.Distance(player.transform.position, FindObjectOfType<NelayanController>().TravelPointPulau2.position);
-            var distancePulauNikah = Vector3.Distance(player.transform.position, FindObjectOfType<NelayanController>().TravelPointPulauNikah.position);
+            var distancePulau1 = Vector3.Distance(player.transform.position, FindObjectOfType<NelayanController>(true).TravelPointPulau1.position);
+            var distancePulau2 = Vector3.Distance(player.transform.position, FindObjectOfType<NelayanController>(true).TravelPointPulau2.position);
+            var distancePulauNikah = Vector3.Distance(player.transform.position, FindObjectOfType<NelayanController>(true).TravelPointPulauNikah.position);
 
             if (distancePulau1 < distancePulau2)
             {
@@ -195,6 +195,10 @@ public class SaveFileController : MonoBehaviour
     public void Load()
     {
         var globalInv = FindObjectOfType<GlobalInventory>();
+        if (PlayerPrefs.HasKey("PlayerPosition"))
+        {
+            GameObject.Find("Prologue 1").SetActive(false);
+        }
         if (PlayerPrefs.HasKey("SaveQuest"))
         {
             Debug.Log(PlayerPrefs.GetString("SaveQuest"));
@@ -213,10 +217,7 @@ public class SaveFileController : MonoBehaviour
 
             }
 
-            if (quests.Count != 0)
-            {
-                GameObject.Find("Prologue 1").SetActive(false);
-            }
+          
         }
         if (PlayerPrefs.HasKey("SaveItems"))
         {
