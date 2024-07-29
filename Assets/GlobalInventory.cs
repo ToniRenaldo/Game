@@ -9,7 +9,7 @@ public class GlobalInventory : MonoBehaviour
     public List<GameData.Item> items;
     public List<GameData.Weapon> weapons;
     public List<GameData.Armor> armors;
-    private int _gold;
+    [SerializeField] private int _gold;
     public int gold { 
         get { return _gold; }
         set { _gold = Mathf.Clamp(value, 0, 999999); }

@@ -278,34 +278,93 @@ MonoBehaviour:
     defaultAP: 0
     currentAP: 0
     armor:
-      armorId: 
-      name: 
+      id: 
+      objectName: 
+      price: 0
       armorHealth: 0
       defendChance: 0
+      imageSprite: {fileID: 0}
+      level: 0
+      avatar: 0
+      owner: {fileID: 0}
     weapon1:
-      weaponId: 
-      name: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
+      imageSprite: {fileID: 0}
+      level: 0
+      type: 0
+      weaponPrefab: {fileID: 0}
+      avatar: 0
+      owner: {fileID: 0}
     weapon2:
-      weaponId: 
-      name: 
+      id: 
+      objectName: 
+      price: 0
       damage: 0
       criticalStrike: 0
+      imageSprite: {fileID: 0}
+      level: 0
+      type: 0
+      weaponPrefab: {fileID: 0}
+      avatar: 0
+      owner: {fileID: 0}
     activeEffect: []
     items: []
   item:
-    itemId: 
-    name: 
+    id: 
+    objectName: 
+    price: 0
     effect: 0
     value: 0
     duration: 0
     imageSprite: {fileID: 0}
+  weapon:
+    id: 
+    objectName: 
+    price: 0
+    damage: 0
+    criticalStrike: 0
+    imageSprite: {fileID: 0}
+    level: 0
+    type: 0
+    weaponPrefab: {fileID: 0}
+    avatar: 0
+    owner: {fileID: 0}
+  armor:
+    id: 
+    objectName: 
+    price: 0
+    armorHealth: 0
+    defendChance: 0
+    imageSprite: {fileID: 0}
+    level: 0
+    avatar: 0
+    owner: {fileID: 0}
+  commonItem:
+    id: 
+    objectName: 
+    price: 0
   ammount: 0
+  isWeapon: 0
+  itemType: 0
   icon: {fileID: 7306413638240000113}
+  avatar: {fileID: 0}
+  avatarName: {fileID: 0}
   itemName: {fileID: 1475640070556834235}
   itemEffect: {fileID: 5350058777996449787}
   itemAmmount: {fileID: 3323065266446292305}
+  buyButton: {fileID: 0}
+  useButton: {fileID: 0}
+  isInventory: 0
+  choosenItem:
+    id: 
+    objectName: 
+    price: 0
+  owner: {fileID: 0}
+  ownerImage: {fileID: 0}
 --- !u!1 &3251647327778260358
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,8 +441,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294943808
-  m_fontColor: {r: 0.25, g: 0.6429633, b: 1, a: 1}
+    rgba: 4278193407
+  m_fontColor: {r: 1, g: 0.047946326, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
