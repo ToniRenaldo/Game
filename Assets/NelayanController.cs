@@ -116,6 +116,9 @@ public class NelayanController : MonoBehaviour
         await FadeCanvasController.instance.FadeIn();
         FindObjectOfType<InteractButton>(true).gameObject.SetActive(true);
         FindObjectOfType<ThirdPersonController>().allowedToMove = true;
+        FindObjectOfType<CinemachineVirtualCamera>().Follow = FindObjectOfType<ThirdPersonController>().GetComponent<CameraPosition>().cameraPos;
+        FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine3rdPersonFollow>().CameraDistance = 8;
+
         SaveFileController.instance.Save();
     }
 

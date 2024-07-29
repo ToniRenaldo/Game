@@ -9,7 +9,13 @@ public class GlobalInventory : MonoBehaviour
     public List<GameData.Item> items;
     public List<GameData.Weapon> weapons;
     public List<GameData.Armor> armors;
-    public int gold;
+    private int _gold;
+    public int gold { 
+        get { return _gold; }
+        set { _gold = Mathf.Clamp(value, 0, 999999); }
+    }
+    [Header("Debug")]
+    public int debugAddGold;
     public static GlobalInventory instance;
 
     private void Start()
@@ -45,6 +51,11 @@ public class GlobalInventory : MonoBehaviour
 
     }
 
+    [ContextMenu("Debug - Add Gold")]
+    public void DebugAddGold()
+    {
+        AddGold(debugAddGold);
+    }
     public void AddGold(int ammount)
     {
         gold += ammount;

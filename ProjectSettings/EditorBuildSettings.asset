@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 928b3d63ba54f6d418ee99bcf1ef2804
+  - enabled: 1
     path: Assets/Scenes/MainWorld.unity
     guid: b618d9ec250c8ab498a48a066da1b0ea
   - enabled: 1
