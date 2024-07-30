@@ -100,7 +100,7 @@ public class NelayanController : MonoBehaviour
     {
         FindObjectOfType<InteractButton>(true).gameObject.SetActive(false);
         FindObjectOfType<ThirdPersonController>().allowedToMove = false;
-        await FadeCanvasController.instance.FadeOut();
+        await FindObjectOfType<FadeCanvasController>().FadeOut();
 
         pulauNikah.SetActive(tpPoint == TravelPointPulauNikah);
         pulau1.SetActive(tpPoint == TravelPointPulauNikah || tpPoint == TravelPointPulau1);
@@ -113,7 +113,7 @@ public class NelayanController : MonoBehaviour
         FindObjectsOfType<CharacterFollower>().ToList().ForEach(x => x.GetComponent<NavMeshAgent>().enabled = true);
 
         await Task.Delay(2000);
-        await FadeCanvasController.instance.FadeIn();
+        await FindObjectOfType<FadeCanvasController>().FadeIn();
         FindObjectOfType<InteractButton>(true).gameObject.SetActive(true);
         FindObjectOfType<ThirdPersonController>().allowedToMove = true;
         FindObjectOfType<CinemachineVirtualCamera>().Follow = FindObjectOfType<ThirdPersonController>().GetComponent<CameraPosition>().cameraPos;
