@@ -93,6 +93,7 @@ public class QuestGiver : MonoBehaviour
         SaveFileController.instance.AddQuest(quest);
         SaveFileController.instance.AddQuestProgress(0, SaveFileController.instance.quests.Find(x => x.questId == quest.questId));
 
+        if(icon != null)
         icon.gameObject.SetActive(false);
         lookAtConstraint.enabled = false;
 

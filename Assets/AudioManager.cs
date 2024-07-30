@@ -11,10 +11,18 @@ public class AudioManager : MonoBehaviour
     public GameObject buttonBGM;
     public GameObject imageMuteBGM;
     public GameObject imageUnMuteBGM;
+    public Slider bgmSlider;
+
 
     [Header("Clips")]
     public AudioClip battleClip;
     public AudioClip roamingClip;
+
+
+    public AudioClip pulau1AC;
+    public AudioClip pulau2AC;
+    public AudioClip pulau3AC;
+
     public float defaultVolume;
 
     [Header("SFX")]
@@ -24,12 +32,40 @@ public class AudioManager : MonoBehaviour
     public GameObject buttonSfx;
     public GameObject imageMuteSfx;
     public GameObject imageUnMuteSfx;
+    public Slider sfxSlider;
 
     private void Start()
     {
-        buttonBGM.GetComponent<Button>().onClick.AddListener(ToggleBGM);
-        buttonSfx.GetComponent<Button>().onClick.AddListener(ToggleSFX);    
+        bgmSlider.value = bgmAudioSource.volume;
+        sfxSlider.value = sfxAudioSource.volume;
+
+        bgmSlider.onValueChanged.AddListener(SetBGMVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
+
+
+    public void SetBGMVolume(float value)
+    {
+        bgmAudioSource.volume = value;
+    }
+    public void SetSFXVolume(float value)
+    {
+        sfxAudioSource.volume = value;
+    }
+
+    public void ChangeBGMToPulau2()
+    {
+        roamingClip = pulau2AC;
+        SetRoamingBGM();
+
+    }
+    public void ChangeBGMToPulau3()
+    {
+        roamingClip = pulau3AC;
+        SetRoamingBGM();
+
+    }
+
     public void ToggleBGM()
     {
         if(bgmAudioSource.volume  != 0)

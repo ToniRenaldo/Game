@@ -147,10 +147,20 @@ public class SaveFileController : MonoBehaviour
         }
 
     }
+
+    [Header("Notification Quest")]
+    public GameObject regularIconQuest;
+    public GameObject animationIconQuest;
     public void AddQuest(Quest newQuest)
     {
         SendNotification("Misi baru ditambahkan");
         quests.Add(newQuest);
+
+        if (newQuest.mainQuest)
+        {
+            regularIconQuest.SetActive(false );
+            animationIconQuest.SetActive(true);
+        }
         Save();
     }
 
