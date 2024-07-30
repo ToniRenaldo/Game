@@ -62,6 +62,11 @@ public class NpcController : MonoBehaviour
         }
         else
         {
+            if (narasi.Count != 0 && narasi[dialogueCounter] != null)
+            {
+                GetComponentInParent<AudioSource>().Stop();
+            }
+
             if (dialogueCounter + 1 == activeDialogue.Count)
             {
                
