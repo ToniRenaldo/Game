@@ -18,6 +18,7 @@ public class NpcController : MonoBehaviour
     public UnityEvent OnDialogueDone;
     public UnityEvent OnDialogueAfterDone;
 
+    public List<AudioClip> narasi;
 
     [Header("Canvas")]
     public GameObject dialogueCanvas;
@@ -92,6 +93,10 @@ public class NpcController : MonoBehaviour
 
             dialogueTMP.text = "";
             CR_Dialgoue = StartCoroutine(IE_Type());
+            if (narasi.Count != 0 && narasi[dialogueCounter] != null)
+            {
+                GetComponentInParent<AudioSource>().PlayOneShot(narasi[dialogueCounter]);
+            }
         }
 
     }
@@ -133,7 +138,10 @@ public class NpcController : MonoBehaviour
         }
 
         CR_Dialgoue = StartCoroutine(IE_Type());
-
+        if (narasi.Count != 0 && narasi[dialogueCounter] != null)
+        {
+            GetComponentInParent<AudioSource>().PlayOneShot(narasi[dialogueCounter]);
+        }
         //dialogueTMP.text = activeDialogue[0];
         dialogueCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;

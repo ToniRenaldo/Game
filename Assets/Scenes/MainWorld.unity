@@ -618,6 +618,13 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: 1c93e13c13205504eb16b462e78037ed, type: 3}
+  - {fileID: 8300000, guid: 81749672901a7144a89288004d34a856, type: 3}
+  - {fileID: 8300000, guid: 614b4f07676239f4a918d00800cfb52e, type: 3}
+  - {fileID: 8300000, guid: 3dbf3554298973e4ba106d182925d772, type: 3}
+  - {fileID: 8300000, guid: 80df49d680113264cb9860a88da654d9, type: 3}
+  - {fileID: 8300000, guid: a03eb99ad5e2f4447b12d31a3ec8f7fe, type: 3}
   dialogueCanvas: {fileID: 1204719611}
   dialogueTMP: {fileID: 1093001771}
   dialogueName: {fileID: 1981166645}
@@ -2357,6 +2364,10 @@ PrefabInstance:
       value: Raja Syah Alam
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: dialogues.Array.data[0]
       value: 'Kalian berlima sangatlah kuat dan saya akan sangat membutuhkan kekuatan
         kalian dalam memperkuat kerajaan ini '
@@ -2370,12 +2381,16 @@ PrefabInstance:
       value: Dan khusus untukmu Hang Tuah, saya angkat menjadi Laksamana Kerajaan
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: Ini kuberikan Keris Teming Sari untuk mu. Gunakanlah sebaik baiknya.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: dialogueAfter.Array.data[0]
       value: Sekarang berangkatlah ke Majapahit
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2390,6 +2405,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 53911341}
@@ -2402,6 +2421,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1547423832}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 283589906}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2411,6 +2434,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
@@ -2426,6 +2453,10 @@ PrefabInstance:
       value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: BeriKeris
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: QuestGiver, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2438,11 +2469,19 @@ PrefabInstance:
       value: UnityEngine.Behaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
@@ -2455,6 +2494,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535051253107996328, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
+      propertyPath: OnDialogueDone.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5160,6 +5203,8 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: e589ee423a5884a40b25284634592e90, type: 3}
   dialogueCanvas: {fileID: 705504915}
   dialogueTMP: {fileID: 1899130334}
   dialogueName: {fileID: 1077804720}
@@ -25732,6 +25777,8 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: 1e2fca0119407d345bd2ee12b036ed73, type: 3}
   dialogueCanvas: {fileID: 2116367467}
   dialogueTMP: {fileID: 1285754356}
   dialogueName: {fileID: 1596449518}
@@ -28710,6 +28757,7 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi: []
   dialogueCanvas: {fileID: 0}
   dialogueTMP: {fileID: 0}
   dialogueName: {fileID: 0}
@@ -41834,7 +41882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5926953966221057148, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
       propertyPath: quest.description
-      value: Peternak ayam tersebut kehilangan 3 ayamnya dibelakang rumahnya, sepertinya
+      value: Peternak ayam tersebut kehilangan 5 ayamnya dibelakang rumahnya, sepertinya
         mereka bersembunyi
       objectReference: {fileID: 0}
     - target: {fileID: 5926953966221057148, guid: 86d33ccf99edcfd4ea3902a0a35f70b3, type: 3}
@@ -44580,6 +44628,10 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: 306a1deef4602824bb268edb85fbef12, type: 3}
+  - {fileID: 8300000, guid: 579542f7f54a17146aefcc3526ab9ec7, type: 3}
+  - {fileID: 8300000, guid: 099cdc523b74da04192417b5c88f3aed, type: 3}
   dialogueCanvas: {fileID: 460407932}
   dialogueTMP: {fileID: 841960184}
   dialogueName: {fileID: 1050758916}
@@ -54758,6 +54810,10 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: 8059bf909f4b58f4cb17fdf91e09229e, type: 3}
+  - {fileID: 8300000, guid: 0b0d7817ad9a33f4a94a48b13f144542, type: 3}
+  - {fileID: 8300000, guid: 5dde6ba9323c179449d30d25fff879a0, type: 3}
   dialogueCanvas: {fileID: 470526221}
   dialogueTMP: {fileID: 1689894015}
   dialogueName: {fileID: 697183123}
@@ -56077,6 +56133,7 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi: []
   dialogueCanvas: {fileID: 0}
   dialogueTMP: {fileID: 0}
   dialogueName: {fileID: 0}
@@ -56990,6 +57047,10 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: 7c7e15dae4e194d4d82d59f4afd0d0fd, type: 3}
+  - {fileID: 8300000, guid: 00328723028873e4fb1a37c14c98365d, type: 3}
+  - {fileID: 8300000, guid: 40cd1e3e13ceb1a4ab29e0b6b17af81f, type: 3}
   dialogueCanvas: {fileID: 137349599}
   dialogueTMP: {fileID: 230810664}
   dialogueName: {fileID: 688097022}
@@ -68453,7 +68514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalWeapon:
   - id: keris0
-    objectName: Keris Taming Sari
+    objectName: 'Rusty Keris '
     price: 0
     damage: 10
     criticalStrike: 40
@@ -68506,6 +68567,17 @@ MonoBehaviour:
     type: 0
     weaponPrefab: {fileID: 919132149155446097, guid: 1a9be62f13859614c9143d89497e792a, type: 3}
     avatar: 0
+    owner: {fileID: 0}
+  - id: keris5
+    objectName: Keris Taming Sari
+    price: 60
+    damage: 30
+    criticalStrike: 80
+    imageSprite: {fileID: 21300000, guid: 08d5ec2d201ece949a5e428ba3ea0e63, type: 3}
+    level: 3
+    type: 0
+    weaponPrefab: {fileID: 919132149155446097, guid: 1a9be62f13859614c9143d89497e792a, type: 3}
+    avatar: 15
     owner: {fileID: 0}
   - id: panah0
     objectName: Regular Bow
@@ -73664,7 +73736,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aff05f998dbb50b4fa7b35bec5410883, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -87087,7 +87159,7 @@ MonoBehaviour:
     Hang Jebat menghembuskan nafas terakhirnya di pangkuan Hang Tuah
   - Sejak kematian Hang Jebat, Malaka kembali tentram. Rakyat Malaka dapat membangun
     negerinya kembali hingga menjadi kerajaan besar.
-  - Hang tuah pun kembali diangkat menjadi laksamana Kerjaan Malaka.
+  - Hang tuah pun kembali diangkat menjadi laksamana Kerajaan Malaka.
   - Tamat...
   dialogueAfter: []
   OnDialogueDone:
@@ -87120,6 +87192,11 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi:
+  - {fileID: 8300000, guid: b78119a8d55e31943a3dd6e68587708f, type: 3}
+  - {fileID: 8300000, guid: 1bda9045a0f02784ca4779b16740dbc4, type: 3}
+  - {fileID: 8300000, guid: 555a0d27f5ff5b2488a42177ceba6a76, type: 3}
+  - {fileID: 8300000, guid: f660fd3538c69214189c78918ac09e2e, type: 3}
   dialogueCanvas: {fileID: 1476023154}
   dialogueTMP: {fileID: 210029835}
   dialogueName: {fileID: 1215220375}
@@ -93660,6 +93737,7 @@ MonoBehaviour:
   OnDialogueAfterDone:
     m_PersistentCalls:
       m_Calls: []
+  narasi: []
   dialogueCanvas: {fileID: 1260826634}
   dialogueTMP: {fileID: 203128156}
   dialogueName: {fileID: 1765307391}
@@ -95479,6 +95557,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  narasi: []
   dialogueCanvas: {fileID: 8851403373681664238}
   dialogueTMP: {fileID: 2235704520242676889}
   dialogueName: {fileID: 3427669538353783779}
@@ -97776,6 +97855,7 @@ GameObject:
   - component: {fileID: 2134395390}
   - component: {fileID: 2134395389}
   - component: {fileID: 2134395388}
+  - component: {fileID: 2134395392}
   m_Layer: 5
   m_Name: Canvas-Prologue
   m_TagString: Untagged
@@ -97872,6 +97952,102 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &2134395392
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134395387}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2138007814
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -35,6 +35,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void BeriKeris()
+    {
+        var globInv = FindObjectOfType<GlobalInventory>();
+        if (globInv.weapons.Find(x => x.id == "keris5") == null)
+        {
+            var keris = new GameData.Weapon() { id = "keris5", owner = null , avatar = AvatarController.AVATAR.None};
+            globInv.weapons.Add(keris);
+        }
+    }
     #region Battle
 
 

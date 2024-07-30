@@ -65,21 +65,26 @@ public class QuestGiver : MonoBehaviour
     }
     public void HaveQuest()
     {
+        if (icon != null)
         icon.gameObject.SetActive(true);
-        lookAtConstraint.enabled = true;
+        if (lookAtConstraint != null)
+            lookAtConstraint.enabled = true;
 
         ConstraintSource cameraSource = new ConstraintSource();
         cameraSource.sourceTransform = Camera.main.transform;
         cameraSource.weight = 1;
 
-        lookAtConstraint.AddSource(cameraSource);
+        if (lookAtConstraint != null)
+            lookAtConstraint.AddSource(cameraSource);
     }
 
 
     private void OnDisable()
     {
-        icon.gameObject.SetActive(false);
-        lookAtConstraint.enabled = false;
+        if (icon != null)
+            icon.gameObject.SetActive(false);
+        if (lookAtConstraint != null)
+            lookAtConstraint.enabled = false;
     }
     public void SendQuest()
     {
@@ -95,7 +100,8 @@ public class QuestGiver : MonoBehaviour
 
         if(icon != null)
         icon.gameObject.SetActive(false);
-        lookAtConstraint.enabled = false;
+        if (lookAtConstraint != null)
+            lookAtConstraint.enabled = false;
 
     }
 }
