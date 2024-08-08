@@ -37,10 +37,13 @@ public class ShopController : MonoBehaviour
 
         lookAtConstraint.AddSource(cameraSource);
     }
+
+    // Function ini gunanya untuk membuka shop inventory 
     public void OpenInventory()
     {
         if (lastVisit == null)
         {
+            // restock barang jika sudah habis
             Restock();
         }
 
@@ -48,11 +51,14 @@ public class ShopController : MonoBehaviour
 
         if (timespan.TotalMinutes > restockMinutes)
         {
+            // Restock barang jika sudah melewati waktu yang sudah di set
             Restock();
         }
 
 
         canvasShop.SetActive(true);
+
+        //menghapus semua item dalam canvasnya
         foreach (Transform t in armorContainer)
         {
             Destroy(t.gameObject);
@@ -66,6 +72,8 @@ public class ShopController : MonoBehaviour
             Destroy(t.gameObject);
         }
 
+        
+        // Menambahkan panel senjata dan update jika ada perubahan
         foreach (var panel in weapons)
         {
             GameObject item = Instantiate(weaponPrefab, weaponTabContent);
@@ -74,6 +82,8 @@ public class ShopController : MonoBehaviour
             rpgItem.buyButton.onClick.AddListener(() => RequestBuy(panel.id, rpgItem));
             storeItems.Add(rpgItem);
         }
+
+        // Menambahkan panel item dan update jika ada perubahan
 
         foreach (var panel in items)
         {
@@ -84,6 +94,8 @@ public class ShopController : MonoBehaviour
             storeItems.Add(rpgItem);
 
         }
+
+        // Menambahkan panel armor dan update jika ada perubahan
 
         foreach (var panel in armors)
         {

@@ -75,8 +75,11 @@ public class TurnBasedRPG : MonoBehaviour
 
 
     [ContextMenu("Start Battle")]
+
+    // Fucntion ini berguna untuk memulai Battle RPG
     public void StartBattle()
     {
+        
         Application.targetFrameRate = 60;
         InitiateBattle(setupRightTeam,setupLeftTeam);
     }
@@ -87,19 +90,30 @@ public class TurnBasedRPG : MonoBehaviour
         // Spawing Avatar
         inventoryController = GetComponent<RPG_InventoryController>();
 
+
+        // Setup statisitik player team kanan (team musuh)
+
         for (int i = 0; i < rightTeamStats.Count; i++)
         {
+            // Spawn Avatar Musuh pada posisi yang sudah ditentukan
             GameObject avatar = Instantiate(avatarControllerPrefab , rightSpot[i],true);
             avatar.transform.localPosition = Vector3.zero;
             avatar.transform.localRotation = Quaternion.identity;
 
+            // Set AvatarController
+            // Avatar controller berguna untuk menyimpan statistik avatar dan berguna mengatur behaviour avatar
+            // seperti set animasi, damage, dan hit
             AvatarController ava = rightTeamStats[i].avatar;
             
+            // Set avatar karakter
             avatar.GetComponent<AvatarController>().SetAvatar(ava.choosenAvatar , false);
+
+            // Set statistik avatar (Attack , HP, Shield)
             avatar.GetComponent<AvatarController>().SetStats(ava, ava.stats.weapon1, ava.stats.weapon2, ava.stats.armor, ava.stats.items);
             rightTeam.Add(avatar);
             GameObject stats = Instantiate(playerStatsMiniPrefab , enemyStatsPanel);
 
+            // Setup stat darah dan armor diatas kepala karakter
             stats.GetComponent<RPGPlayerStats>().Initiate(avatar.GetComponent<AvatarController>());
 
             playerStatsUI.Add(stats.GetComponent<RPGPlayerStats>());
@@ -110,18 +124,27 @@ public class TurnBasedRPG : MonoBehaviour
             avatar.GetComponent<BotController>().SetType( rightTeamStats[i].avatar.GetComponent<BotController>().type);
 
         }
+
+        // Setup avatar player
         for (int i = 0; i < leftTeamStats.Count; i++)
         {
+            //Spawn avatar
             GameObject avatar = Instantiate(avatarControllerPrefab, leftSpot[i]);
             avatar.transform.localPosition = Vector3.zero;
             avatar.transform.localRotation = Quaternion.identity;
+
+            // Set karakter avatar
             avatar.GetComponent<AvatarController>().SetAvatar(leftTeamStats[i].avatar.choosenAvatar, leftTeamStats[i].isPlayer);
 
             AvatarController ava = leftTeamStats[i].avatar;
             avatar.GetComponent<AvatarController>().SetAvatar(ava.choosenAvatar,true);
+
+            // Set Statistik avatar
             avatar.GetComponent<AvatarController>().SetStats(ava, ava.stats.weapon1, ava.stats.weapon2, ava.stats.armor, ava.stats.items);
             leftTeam.Add(avatar);
             GameObject stats = Instantiate(playerStatsPrefab, playerStatsPanel);
+
+            // Setup statistik (Attack, HP, Shield) pada pojok kiri bawah
             stats.GetComponent<RPGPlayerStats>().Initiate(avatar.GetComponent<AvatarController>());
             playerStatsUI.Add(stats.GetComponent<RPGPlayerStats>()); 
 
@@ -201,10 +224,14 @@ public class TurnBasedRPG : MonoBehaviour
     {
         CloseAllCanvas(false);
         yield return IE_PlayNotification("Pertarungan Dimulai!",2);
+
+        // While selamanya hingga dihentikan jika semua musuh sudah mati
         while (true)
         {
 
 
+            // Increment Turn dari karakter. Jika berganti maka tambahakan increment agar menjadi giliran
+            // karakter selanjutnya
             if (isLeftPlaying)
             {
                 leftTeamTurn = leftTeamTurn + 1 == leftTeam.Count ? leftTeamTurn = 0 : leftTeamTurn + 1;
@@ -214,6 +241,7 @@ public class TurnBasedRPG : MonoBehaviour
                 rightTeamTurn = rightTeamTurn + 1 == rightTeam.Count ? rightTeamTurn = 0 : rightTeamTurn + 1;
             }
 
+            // Set Timeline pada sebelah kiri layar
             if(GetComponent<TurnTimelineController>().isInitiated == false)
             {
                 GetComponent<TurnTimelineController>().Initiate();
@@ -227,16 +255,23 @@ public class TurnBasedRPG : MonoBehaviour
 
 
             Transform currentCamPos = isLeftPlaying ? leftTeamCamPos : rightTeamCamPos;
+
+            // Set posisi kamera sesuai posisi team yang bermain
             mainCamera.SetPositionAndRotation(currentCamPos.position, currentCamPos.rotation);
 
             currentAvatarTurn = isLeftPlaying ? leftTeam[leftTeamTurn] : rightTeam[rightTeamTurn];
 
             AvatarController p1 = currentAvatarTurn.GetComponent<AvatarController>();
+
+            // Set giliran karakter / Avatar Controller selanjutnya
             p1.SetTurn(true);
 
             Debug.Log(p1.avatarName + " Turns ! ");
+
+            // Keluarkan notifikasi memberitahukan giliran karakter yang bermain
             yield return IE_PlayNotification($"Giliran {p1.stats.avatarName}", 0.5f);
 
+            // Set button swap weapon
             FindObjectOfType<SwapWeaponController>(true).SetWeaponName(p1.activeWeapon.objectName);
 
 
@@ -254,13 +289,21 @@ public class TurnBasedRPG : MonoBehaviour
 
             if (!isLeftPlaying)
             {
+                // Jika giliran bot, maka karakter akan berfikir terlebih dahulu apa action yang ingin dia lakukan
+                // Action yang tersedia adalah Attack, Guard, Heal, Increase Damage
+                // Untuk sekarang logika thinking nya hanya random
                 p1.GetComponent<BotController>().Thinking();
             }
 
+            // Menunggu actionType yang dipilih oleh karakter tidak sama dengan Idle
             yield return new WaitUntil(() => actionType != ActionType.IDLE);
+
             AvatarController p2 = null;
+
+            // Jika karakter memilih untuk attack maka...(1)
             if (actionType !=  ActionType.DEFEND && actionType != ActionType.USEITEM)
             {
+                // (1)...Menunggu action target (action target adalah target siapa action tersebut ditujukan)
                 yield return new WaitUntil(() => actionTarget != null);
                 CloseAllCanvas(false);
                 p2 = actionTarget.GetComponent<AvatarController>();
@@ -271,6 +314,7 @@ public class TurnBasedRPG : MonoBehaviour
             
             GameObject deathPlayer = null;
 
+            // jika pemain memilih attack
             if(actionType == ActionType.ATTACK1)
             {
                 if(isLeftPlaying && GameData.instance.debug)
@@ -281,18 +325,24 @@ public class TurnBasedRPG : MonoBehaviour
                 {
                     yield return p1.IE_MoveToAttackPos(p2.attackPlace);
                 }
+
+                // Berikan damage pada P2, dengan parameter jumlah damage yang bisa diberikan P1
                 deathPlayer = p2.GiveDamage(p1.Attack1());
                 yield return new WaitForSeconds(2);
                 yield return p1.IE_ResetPos();
             }
+            // Jika pemain memilih defend
             else if (actionType == ActionType.DEFEND)
             {
                 Debug.Log("Guards Up");
 
+                // Memnaggil action defend pada Avatar 
                 p1.Defend();
                 yield return p1.IE_ResetPos();
 
             }
+
+            // Jika pemain memilih use item
             else if(actionType == ActionType.USEITEM)
             {
                 yield return new WaitUntil(() => choosenItem != null);
@@ -301,11 +351,14 @@ public class TurnBasedRPG : MonoBehaviour
                 yield return p1.IE_ResetPos();
 
             }
+
+            // Update statistik player (HP, dan Shield)
             playerStatsUI.Find(x => x.currentAc == p1).UpdateStats();
             if(p2 != null)
             playerStatsUI.Find(x => x.currentAc == p2).UpdateStats();
 
 
+            // Jika ada karakter yang darahnya sudah <=0 maka set kematian karakter tersebut
             if (deathPlayer != null)
             {
                 SetDeath(deathPlayer);
@@ -313,16 +366,21 @@ public class TurnBasedRPG : MonoBehaviour
 
 
 
+            // Check apakah sudah memenuhi kondisi kemenangan ? 
             if (isWin())
             {
+                // Tampilkan panel menang
                 ShowWin();
                 yield break;
             }
+            // Stop giliran pemain p1
             p1.SetTurn(false);
             
             CloseAllCanvas(false);
 
             yield return new WaitForSeconds(0.5f);
+
+            // Ganti giliran
             isLeftPlaying = !isLeftPlaying;
 
 
